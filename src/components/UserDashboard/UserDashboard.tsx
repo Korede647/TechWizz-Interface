@@ -41,7 +41,7 @@ export interface Booking {
   startDate: string;
   endDate: string;
   amount: number;
-  status: "UPCOMING" | "COMPLETED" | "CANCELLED";
+  status: "UPCOMING" | "COMPLETED" | "CANCELLED" | "PENDING";
 }
 
 // Notifications/messages for user
@@ -98,15 +98,15 @@ const destinationMix: DestinationMix[] = [
 ];
 
 const bookings: Booking[] = [
-    { id: "1", destination: "Bali", startDate: "2023-10-01", endDate: "2023-10-10", amount: 800, status: "UPCOMING" },
+    { id: "1", destination: "Bali", startDate: "2023-10-01", endDate: "2023-10-10", amount: 800, status: "PENDING" },
     { id: "2", destination: "Paris", startDate: "2023-11-05", endDate: "2023-11-12", amount: 1200, status: "UPCOMING" },
     { id: "3", destination: "New York", startDate: "2023-12-15", endDate: "2023-12-20", amount: 1500, status: "COMPLETED" },
     { id: "4", destination: "Sydney", startDate: "2024-01-10", endDate: "2024-01-20", amount: 1000, status: "CANCELLED" },
     { id: "5", destination: "Tokyo", startDate: "2024-02-01", endDate: "2024-02-10", amount: 900, status: "UPCOMING" },
     { id: "6", destination: "Rio de Janeiro", startDate: "2024-03-05", endDate: "2024-03-12", amount: 1100, status: "COMPLETED" },
     { id: "7", destination: "Cape Town", startDate: "2024-04-01", endDate: "2024-04-10", amount: 950, status: "UPCOMING" },
-    { id: "8", destination: "Dubai", startDate: "2024-05-01", endDate: "2024-05-10", amount: 1200, status: "UPCOMING" },
-    { id: "9", destination: "Moscow", startDate: "2024-06-01", endDate: "2024-06-10", amount: 1300, status: "UPCOMING" },
+    { id: "8", destination: "Dubai", startDate: "2024-05-01", endDate: "2024-05-10", amount: 1200, status: "CANCELLED" },
+    { id: "9", destination: "Moscow", startDate: "2024-06-01", endDate: "2024-06-10", amount: 1300, status: "PENDING" },
     { id: "10", destination: "Houston", startDate: "2024-07-22", endDate: "2024-09-22", amount: 3000, status: "COMPLETED"}
 ];
 
@@ -127,6 +127,9 @@ const statusBadge = (status: string) => {
   }
   if (status === "COMPLETED") {
     return <span className="badge badge-completed">Completed</span>;
+  }
+  if (status === "PENDING") {
+    return <span className='badge badge-pending'>Pending</span>
   }
 
   return <span className="badge badge-cancelled">Cancelled</span>;
