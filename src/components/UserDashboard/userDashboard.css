@@ -114,6 +114,11 @@ body {
   margin-top: 1rem;
 }
 
+/* .sidebar-nav svg{
+    width: 24px;
+    height: 24px;
+} */
+
 .sidebar-link {
   display: flex;
   align-items: center;
@@ -129,6 +134,9 @@ body {
   background: var(--bg);
   color: var(--primary);
 }
+
+/* .sidebar-link svg{} */
+
 
 .sidebar_footer {
   margin-top: auto;
@@ -425,4 +433,25 @@ body {
 .badge-pending {
   background: #fff3cd;
   color: var(--warning);
+}
+
+/* -------------------------------
+    Pagination
+-------------------------------- */
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.pagination span {
+  font-size: 0.9rem;
+  color: var(--text-color, #333);
+}
+
+.pagination .btn.small {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
 }

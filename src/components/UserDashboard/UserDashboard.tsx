@@ -147,7 +147,27 @@ const sidebarItemsClosed = [
 ]
 
 const UserDashboard: React.FC = () => {
+    // useState function to manage sidebar and pagination
     const [sidebarOpen, setSidebarOpen] = useState(true);
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 5;
+    const totalPages = Math.ceil(bookings.length / itemsPerPage);
+
+    // Slice bookings for the cuurent page
+    const paginatedBookings = bookings.slice(
+        (currentPage - 1) * itemsPerPage,
+        currentPage * itemsPerPage
+    );
+
+    // Function to handle page change
+    const handlePrev = () => {
+        setCurrentPage((prev) => Math.max(prev - 1, 1));
+    };
+
+    const handleNext = () => {
+        setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+    };
+
     return (
         <>
             <div className={`user-dashboard${sidebarOpen ? '' : ' sidebar-collapsed'}`}>
@@ -311,7 +331,7 @@ const UserDashboard: React.FC = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {bookings.map((b) => (
+                                {paginatedBookings.map((b) => (
                                     <tr key={b.id}>
                                         <td>{b.id}</td>
                                         <td>{b.destination}</td>
@@ -326,6 +346,27 @@ const UserDashboard: React.FC = () => {
                                 ))}
                             </tbody>
                         </table>
+
+                        {/* Pagination Controls */}
+                        <div className="pagination">
+                            <button
+                            className="btn small"
+                            disabled={currentPage === 1}
+                            onClick={handlePrev}
+                            >
+                            Prev
+                            </button>
+                            <span>
+                            Page {currentPage} of {totalPages}
+                            </span>
+                            <button
+                            className="btn small"
+                            disabled={currentPage === totalPages}
+                            onClick={handleNext}
+                            >
+                            Next
+                            </button>
+                        </div>
                     </div>
                 </main>
             </div>
