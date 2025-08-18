@@ -1,6 +1,6 @@
 import React, {type JSX, useState} from 'react'
 import 'recharts'
-import { ArrowDownRight, ArrowUpRight, Bell, Calendar, ChevronDown, DollarSign, Home, LogOut, PlaneTakeoff, Search, Star, TreePalm } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, Bell, Calendar, ChevronDown, DollarSign, Home, LogOut, Menu, PlaneTakeoff, Search, Star, TreePalm, X } from 'lucide-react';
 import { CartesianGrid, Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
 import { Line, LineChart, XAxis, YAxis } from 'recharts';
 
@@ -151,7 +151,11 @@ const UserDashboard: React.FC = () => {
                             aria-label={sidebarOpen ? 'Close sidebar' : 'Open sidebar'}
                             onClick={() => setSidebarOpen((open) => !open)}
                         >
-                            <ChevronDown className={`icon${sidebarOpen ? '' : ' rotated'}`} />
+                            {sidebarOpen ? (
+                                <X className="icon" />
+                            ) : (
+                                <Menu className="icon" />
+                            )}
                         </button>
                         {sidebarOpen && (
                             <>
