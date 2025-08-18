@@ -1,6 +1,6 @@
 import React, {type JSX, useState} from 'react'
 import 'recharts'
-import { ArrowDownRight, ArrowUpRight, Bell, Calendar, ChevronDown, DollarSign, Home, LogOut, PlaneTakeoff, Search, Star, TreePalm } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, Bell, Calendar, ChevronDown, ChevronRight, DollarSign, Home, LogOut, PlaneTakeoff, Search, Star, TreePalm } from 'lucide-react';
 import { CartesianGrid, Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
 import { Line, LineChart, XAxis, YAxis } from 'recharts';
 
@@ -30,7 +30,7 @@ export interface TravelData {
 // Destination / trip type breakdown (pie chart)
 export interface DestinationMix {
   name: string
-  continent: string;
+  continent: "North America" | "South America" | "Africa" | "Asia" | "Europe" | "Oceania";
   value: number;
 }
 
@@ -64,7 +64,7 @@ export interface UserDashboardProps {
 // Fake data for the User Dashboard
 const kpis: KPI[] = [
     { label: "Upcoming Trips", value: "5", icon: <Calendar className="icon" /> },
-    { label: "Total Spend", value: "$2,300", icon: <DollarSign className="icon" /> },
+    { label: "Total Expenditure", value: "$2,300", icon: <DollarSign className="icon" /> },
     { label: "Loyalty Points", value: "1,200 pts", icon: <Star className="icon" /> },
 ];
 
@@ -87,13 +87,14 @@ const destinationMix: DestinationMix[] = [
     {name: "Bali", continent: "Asia", value: 300.0},
     {name: "Paris", continent: "Europe", value: 599.99},
     {name: "New York", continent: "North America", value: 799.99},
-    {name: "Sydney", continent: "Australia", value: 400.0},
+    {name: "Sydney", continent: "Oceania", value: 400.0},
     {name: "Cairo", continent: "Africa", value: 200.5},
     {name: "Tokyo", continent: "Asia", value: 600.0},
     {name: "Rio de Janeiro", continent: "South America", value: 350.0},
     {name: "Cape Town", continent: "Africa", value: 250.5},
     {name: "Dubai", continent: "Asia", value: 800.3},
-    {name: "Moscow", continent: "Europe", value: 900.00}
+    {name: "Moscow", continent: "Europe", value: 900.00},
+    {name: "Houston", continent: "North America", value: 500.00}
 ];
 
 const bookings: Booking[] = [
@@ -105,7 +106,8 @@ const bookings: Booking[] = [
     { id: "6", destination: "Rio de Janeiro", startDate: "2024-03-05", endDate: "2024-03-12", amount: 1100, status: "COMPLETED" },
     { id: "7", destination: "Cape Town", startDate: "2024-04-01", endDate: "2024-04-10", amount: 950, status: "UPCOMING" },
     { id: "8", destination: "Dubai", startDate: "2024-05-01", endDate: "2024-05-10", amount: 1200, status: "UPCOMING" },
-    { id: "9", destination: "Moscow", startDate: "2024-06-01", endDate: "2024-06-10", amount: 1300, status: "UPCOMING" }
+    { id: "9", destination: "Moscow", startDate: "2024-06-01", endDate: "2024-06-10", amount: 1300, status: "UPCOMING" },
+    { id: "10", destination: "Houston", startDate: "2024-07-22", endDate: "2024-09-22", amount: 3000, status: "COMPLETED"}
 ];
 
 // const notifications: UserNotification[] = [
@@ -135,7 +137,13 @@ const sidebarItems = [
     { label: "Bookings", icon: <DollarSign className="icon" />, path: "/bookings" },
     { label: "Destinations", icon: <TreePalm className="icon" />, path: "/destinations" },
     { label: "Loyalty", icon: <Star className="icon" />, path: "/loyalty" },
+]
 
+const sidebarItemsClosed = [
+    {icon: <Home className='icon'/>, path: "/overview", label: "Overview"},
+    {icon: <DollarSign className='icon'/>, path: "/bookings", label: "Bookings"},
+    {icon: <TreePalm className='icon'/>, path: "/destinations", label: "Destinations"},
+    {icon: <Star className='icon'/>, path: "/loyalty", label: "Loyalty"}
 ]
 
 const UserDashboard: React.FC = () => {
@@ -151,8 +159,19 @@ const UserDashboard: React.FC = () => {
                             aria-label={sidebarOpen ? 'Close sidebar' : 'Open sidebar'}
                             onClick={() => setSidebarOpen((open) => !open)}
                         >
-                            <ChevronDown className={`icon${sidebarOpen ? '' : ' rotated'}`} />
+                            <ChevronRight className={`icon${sidebarOpen ? '' : ' rotated'}`} />
                         </button>
+
+                        {!sidebarOpen && (
+                            <nav className="sidebar-nav closed">
+                                {sidebarItemsClosed.map((item, idx) => (
+                                    <a key={idx} href={item.path} className="sidebar-link" title={item.label}>
+                                        {item.icon}
+                                    </a>
+                                ))}
+                            </nav>
+                        )}
+
                         {sidebarOpen && (
                             <>
                                 <div className="logo">
@@ -266,7 +285,7 @@ const UserDashboard: React.FC = () => {
                                 <PieChart>
                                     <Pie data={destinationMix} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={100}>
                                         {destinationMix.map((_, idx) => (
-                                            <Cell key={idx} />
+                                            <Cell key={idx}/>
                                         ))}
                                     </Pie>
                                     <Tooltip />

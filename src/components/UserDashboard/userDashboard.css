@@ -14,6 +14,8 @@
   --success: #16a34a;
   --warning: #f59e0b;
   --danger: #dc2626;
+  --money: rgb(24, 232, 24);
+  --points: rgb(250, 222, 7);
 }
 
 * {
@@ -33,14 +35,8 @@ body {
    Dashboard Layout
 -------------------------------- */
 .user-dashboard {
-  display: grid;
-  grid-template-columns: 260px 1fr;
   min-height: 100vh;
   transition: all 0.3s ease;
-}
-
-.user-dashboard.sidebar-collapsed {
-  grid-template-columns: 80px 1fr;
 }
 
 /* -------------------------------
@@ -52,7 +48,13 @@ body {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  transition: width 0.3s ease-in-out all;
+  width: 260px;
+  height: 100vh;          
+  position: fixed;        
+  top: 0;
+  left: 0;
+  z-index: 100;           
+  transition: width 0.3s ease-in-out;
 }
 
 .sidebar.collapsed {
@@ -76,12 +78,11 @@ body {
 }
 
 .sidebar-toggle .icon {
-  transition: transform 0.3s ease-in-out all;
+  transition: transform 0.3s ease-in-out;
 }
 
 .sidebar-toggle .icon.rotated {
-  transform: rotate(-90deg);
-  transition: all 0.3s ease-in-out;
+  transform: rotate(90deg);
 }
 
 .logo {
@@ -179,23 +180,48 @@ body {
 }
 
 /* -------------------------------
-   Main Content
--------------------------------- */
-.main {
-  padding: 1.5rem 2rem;
-  overflow-y: auto;
-}
-
-/* -------------------------------
    Topbar
 -------------------------------- */
 .topbar {
+  position: fixed;
+  top: 0;
+  left: 260px;              
+  right: 0;
+  height: 64px;             
+  background: var(--white);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.219);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  padding: 0 2rem;
+  z-index: 99;              
 }
 
+.user-dashboard.sidebar-collapsed .topbar {
+  left: 80px;
+}
+
+/* -------------------------------
+   Main Content
+-------------------------------- */
+.main {
+  position: relative;
+  margin-left: 260px;             
+  padding: 1.5rem 2rem;
+  padding-top: 80px;              
+  width: calc(100% - 260px);      
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.user-dashboard.sidebar-collapsed .main {
+  margin-left: 80px;
+  width: calc(100% - 80px);
+}
+
+/* -------------------------------
+   Search, Profile & Actions
+-------------------------------- */
 .search-container {
   position: relative;
   flex: 1;
@@ -322,7 +348,7 @@ body {
 -------------------------------- */
 .travel-data-charts {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
   gap: 1.2rem;
   margin-bottom: 2rem;
 }
@@ -395,4 +421,8 @@ body {
 .badge-cancelled {
   background: #fee2e2;
   color: var(--danger);
+}
+.badge-pending {
+  background: #fff3cd;
+  color: var(--warning);
 }

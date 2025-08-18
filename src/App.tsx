@@ -3,7 +3,7 @@
 // import viteLogo from '/vite.svg'
 // import './App.css'
 
-import UserDashboard from "./components/UserDashboard/userDashboard"
+import UserDashboard from "./components/UserDashboard/UserDashboard"
 
 function App() {
   return (
