@@ -88,11 +88,11 @@ const destinationMix: DestinationMix[] = [
     {name: "Paris", continent: "Europe", value: 599.99},
     {name: "New York", continent: "North America", value: 799.99},
     {name: "Sydney", continent: "Oceania", value: 400.0},
-    {name: "Cairo", continent: "Africa", value: 200.50},
+    {name: "Cairo", continent: "Africa", value: 200.99},
     {name: "Tokyo", continent: "Asia", value: 600.0},
     {name: "Rio de Janeiro", continent: "South America", value: 350.0},
-    {name: "Cape Town", continent: "Africa", value: 250.5},
-    {name: "Dubai", continent: "Asia", value: 800.3},
+    {name: "Cape Town", continent: "Africa", value: 250.99},
+    {name: "Dubai", continent: "Asia", value: 800},
     {name: "Moscow", continent: "Europe", value: 900.00},
     {name: "Houston", continent: "North America", value: 500.00}
 ];
@@ -340,7 +340,7 @@ const UserDashboard: React.FC = () => {
                                         <td>{b.destination}</td>
                                         <td>{b.startDate}</td>
                                         <td>{b.endDate}</td>
-                                        <td>{b.amount.toFixed(2)}</td>
+                                        <td>{'$' + b.amount.toFixed(2)}</td>
                                         <td>{statusBadge(b.status)}</td>
                                         <td>
                                             <button className="btn small">View</button>
