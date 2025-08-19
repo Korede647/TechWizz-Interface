@@ -88,7 +88,7 @@ const destinationMix: DestinationMix[] = [
     {name: "Paris", continent: "Europe", value: 599.99},
     {name: "New York", continent: "North America", value: 799.99},
     {name: "Sydney", continent: "Oceania", value: 400.0},
-    {name: "Cairo", continent: "Africa", value: 200.5},
+    {name: "Cairo", continent: "Africa", value: 200.50},
     {name: "Tokyo", continent: "Asia", value: 600.0},
     {name: "Rio de Janeiro", continent: "South America", value: 350.0},
     {name: "Cape Town", continent: "Africa", value: 250.5},
