@@ -1,75 +1,232 @@
-.about-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 4rem 2rem;
-  background: linear-gradient(to bottom, #ffffff, #f0f0f0);
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff; 
+  color: #333333; 
 }
 
-.about-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2rem;
-  max-width: 1100px;
-  width: 100%;
-  padding: 2rem;
-  border-radius: 20px;
-  animation: fadeInUp 1.2s ease;
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.about-text {
+
+.header {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #f0f0f0; 
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 3rem;
+  color: #555555;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #777777; 
+}
+
+
+.intro-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+  gap: 40px;
+}
+
+.intro-content {
   flex: 1;
 }
 
-.about-text h1 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 1rem;
+.intro-image {
+  flex: 1;
 }
 
-.about-text p {
-  font-size: 1.1rem;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-.about-image img {
+.intro-image img {
   width: 100%;
-  max-width: 450px;
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-  transition: transform 0.4s ease;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.about-image img:hover {
-  transform: scale(1.05);
+/* Team Section */
+.team-section {
+  margin-bottom: 60px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #555555;
+  margin-bottom: 30px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.team-card {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.team-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.team-card h3 {
+  font-size: 1.5rem;
+  color: #555555;
+}
+
+.team-card p {
+  color: #777777;
+}
+
+/* Values Section */
+.values-section {
+  margin-bottom: 60px;
+}
+
+.values-list {
+  list-style: none;
+  padding: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.value-item {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #f0f0f0;
+  border-top: 1px solid #dddddd;
+  color: #777777;
 }
 
 /* Glass Effect */
-.glass-card {
-  background: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+.glass-effect {
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Animations */
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(40px); }
-  100% { opacity: 1; transform: translateY(0); }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .about-content {
+@keyframes slideLeft {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideRight {
+  from { transform: translateX(50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-slide-left {
+  animation: slideLeft 1s ease-out;
+}
+
+.animate-slide-right {
+  animation: slideRight 1s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 1s ease-out;
+}
+
+.animate-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .intro-section {
     flex-direction: column;
-    text-align: center;
   }
 
-  .about-image img {
-    max-width: 100%;
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .team-card {
+    padding: 15px;
+  }
+
+  .team-image {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-container {
+    padding: 10px;
+  }
+
+  .header {
+    padding: 30px 0;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .value-item {
+    font-size: 1rem;
+    padding: 10px;
   }
 }
