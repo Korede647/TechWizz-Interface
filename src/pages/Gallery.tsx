@@ -67,7 +67,9 @@ const Gallery: React.FC = () => {
       {selectedImg && (
         <div className="lightbox" onClick={closeLightbox}>
           <img src={selectedImg} alt={selectedTitle ?? undefined} />
-          <div className="lightbox-caption">{selectedTitle}</div>
+          <p>{selectedTitle}</p>
+          {/* <div className="lightbox-caption">{selectedTitle}</div>
+          <button onClick={closeLightbox} className="close-btn">✖</button> */}
         </div>
       )}
     </>
