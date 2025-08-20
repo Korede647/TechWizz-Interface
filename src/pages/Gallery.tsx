@@ -13,7 +13,7 @@ const images = [
   { src: "https://picsum.photos/id/1021/600/400", title: "Kyoto, Japan" },
   { src: "https://picsum.photos/id/1022/600/400", title: "New York, USA" },
   { src: "https://picsum.photos/id/1023/600/400", title: "Sydney, Australia" },
-  { src: "https://picsum.photos/id/1024/600/400", title: "Machu Picchu, Peru" },
+  { src: "https://picsum.photos/id/1024/600/1130", title: "Machu Picchu, Peru" },
   { src: "https://picsum.photos/id/1025/600/400", title: "Venice, Italy" },
   { src: "https://picsum.photos/id/1026/800/1440", title: "Iceland" },
   { src: "https://picsum.photos/id/1028/800/1080", title: "Shibuya, Japan" },
