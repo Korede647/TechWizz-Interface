@@ -3,14 +3,14 @@
 // import viteLogo from '/vite.svg'
 // import './App.css'
 
-import Gallery from "./pages/Gallery"
-// import UserDashboard from "./components/UserDashboard/UserDashboard"
+// import Gallery from "./pages/Gallery/Gallery"
+import UserDashboard from "./User Dashboard/UserDashboard"
 
 function App() {
   return (
     <>
-      {/* <UserDashboard /> */}
-      <Gallery/>
+      <UserDashboard />
+      {/* <Gallery/> */}
     </>
   )
 }
