@@ -118,7 +118,7 @@ select:focus {
 }
 
 .login a:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .submit {
