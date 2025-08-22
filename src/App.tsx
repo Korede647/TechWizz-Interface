@@ -14,11 +14,11 @@ function App() {
     <>
       {/* <UserDashboard /> */}
       {/* <Gallery/> */}
-      <Signup/>
+      {/* <Signup/> */}
       {/* <Login/> */}
         <Routes>
           <Route path="/login" element={<Login />} />
-          {/* <Route path='/signup' element={<Signup />} /> */}
+          <Route path='/signup' element={<Signup />} />
         </Routes> 
     </>
   )
