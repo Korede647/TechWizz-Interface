@@ -5,7 +5,7 @@ const ContactUs: React.FC = () => {
   return (
     <div className="page-container">
       <header className="header animate-fade-in">
-        <h1>Contact Us</h1>
+        {/* <h1>Contact Us</h1> */}
         <p className="subtitle">Get in touch with us for any inquiries or support</p>
       </header>
 

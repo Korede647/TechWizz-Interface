@@ -3,55 +3,54 @@ import './AboutUs.css';
 
 const AboutUs: React.FC = () => {
   return (
-    <div className="page-container">
-      <header className="header animate-fade-in">
-        <h1>About Us</h1>
-        <p className="subtitle">Discover our story and what drives us forward</p>
-      </header>
-
-      <section className="intro-section">
-        <div className="intro-content animate-slide-left">
-          <h2>Our Mission</h2>
-          <p>
-            At [Your Business Name], we are dedicated to delivering innovative solutions that empower businesses to thrive in a digital world. With a focus on excellence and customer satisfaction, our team works tirelessly to create value and drive success.
-          </p>
-        </div>
-        <div className="intro-image animate-slide-right">
-          <img src="https://via.placeholder.com/600x400?text=Company+Image" alt="Company Overview" />
-        </div>
-      </section>
-
-      <section className="team-section">
-        <h2 className="section-title animate-fade-in">Meet Our Team</h2>
-        <div className="team-grid">
-          <div className="team-card glass-effect animate-hover">
-            <img src="https://via.placeholder.com/300x300?text=Team+Member+1" alt="Team Member 1" className="team-image" />
-            <h3>John Doe</h3>
-            <p>CEO & Founder</p>
+    <div className="about-container">
+      <div className="glass-hero">
+        <h1 className="animate-fade-in">About Our Company</h1>
+        <p className="animate-slide-up">Crafting excellence since 2010</p>
+      </div>
+      
+      <div className="about-content">
+        <div className="glass-card animate-fade-in">
+          <div className="image-container">
+            <img 
+              src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80" 
+              alt="Our Team" 
+              className="about-image"
+            />
           </div>
-          <div className="team-card glass-effect animate-hover">
-            <img src="https://via.placeholder.com/300x300?text=Team+Member+2" alt="Team Member 2" className="team-image" />
-            <h3>Jane Smith</h3>
-            <p>CTO</p>
-          </div>
-          <div className="team-card glass-effect animate-hover">
-            <img src="https://via.placeholder.com/300x300?text=Team+Member+3" alt="Team Member 3" className="team-image" />
-            <h3>Mike Johnson</h3>
-            <p>Lead Designer</p>
+          <div className="text-content">
+            <h2>Our Story</h2>
+            <p>
+              Founded in 2010, our company began with a simple vision: to deliver exceptional 
+              quality and service in every project we undertake. Over the years, we've grown 
+              into a team of dedicated professionals who are passionate about what they do.
+            </p>
+            <p>
+              Our commitment to innovation, sustainability, and client satisfaction has made 
+              us a leader in our industry. We believe in building lasting relationships with 
+              our clients through transparency and outstanding results.
+            </p>
           </div>
         </div>
-      </section>
 
-      <section className="values-section">
-        <h2 className="section-title animate-fade-in">Our Core Values</h2>
-        <ul className="values-list">
-          <li className="value-item animate-slide-up">Innovation: Pushing boundaries to create cutting-edge solutions.</li>
-          <li className="value-item animate-slide-up" style={{ animationDelay: '0.2s' }}>Integrity: Building trust through honesty and transparency.</li>
-          <li className="value-item animate-slide-up" style={{ animationDelay: '0.4s' }}>Excellence: Committed to delivering the highest quality in everything we do.</li>
-        </ul>
-      </section>
-
-     
+        <div className="values-section">
+          <h2>Our Values</h2>
+          <div className="values-grid">
+            <div className="value-card glass-card animate-slide-up">
+              <h3>Excellence</h3>
+              <p>We strive for the highest quality in everything we do, paying attention to every detail.</p>
+            </div>
+            <div className="value-card glass-card animate-slide-up">
+              <h3>Innovation</h3>
+              <p>We embrace new ideas and technologies to deliver cutting-edge solutions.</p>
+            </div>
+            <div className="value-card glass-card animate-slide-up">
+              <h3>Integrity</h3>
+              <p>We conduct business with honesty, transparency, and respect for all.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
