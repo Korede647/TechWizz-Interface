@@ -16,7 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  background: url('/signup.jpeg') no-repeat center center/cover;
   padding: 2rem;
   position: fixed; 
   margin-top: -18px;
