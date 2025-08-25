@@ -1,0 +1,148 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.navbar {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  transition: background-color 0.3s ease; /* smooth transition */
+}
+
+.navbar.scrolled {
+  background-color: #222222;
+}
+
+
+.logo{
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8%;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.logo-image{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    overflow: hidden;
+ 
+}
+
+.profile-name{
+    position: relative;
+    width: 144px;
+    height: 27px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-nav{
+    width: 70%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    gap: 5%;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.nav-links{
+    width: 70%;
+    height: 50px;
+    padding: 10px;
+    font-family: Poppins, sans-serif;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    font-size: 1px;
+    line-height: 23px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7%;
+}
+
+
+.glass{
+    font-size: 13px;
+    font-family: Poppins, sans-serif;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+
+}
+
+link{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.user-auth{
+    width: 30%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+}
+
+.signup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    font-family: Poppins, sans-serif;
+    font-weight: bold;
+    line-height: 23px;
+    gap: 5px;
+}
+
+.login{
+  width: 40%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2); /* translucent background */
+  border-radius: 20px;                  /* rounded corners */
+  backdrop-filter: blur(10px);          /* frosted blur effect */
+  -webkit-backdrop-filter: blur(10px);  /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* subtle border */
+  font-weight: bold;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+}
+
+.dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+}

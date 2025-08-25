@@ -1,0 +1,290 @@
+
+.winterspecial{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.wnter-special-title{
+    color: white;
+    font-family: Poppins, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+}
+
+.wnter-special-title h1{
+    font-size: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: normal;
+}
+
+.wnter-special-title p{
+    line-height: 1.5;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 28px;
+    width: 100%;
+}
+
+
+
+
+
+    
+.div3 {
+    height: 250px;
+    border-radius: 20px;
+    grid-row: span 3 / span 3;
+    display: flex;
+    align-items: start;
+    justify-content: end;
+    flex-direction: column;
+    background-image: url(/src/assets/Hotel-images/francehotel.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.388);
+}
+
+.div3 span{
+ width: 50%;
+ color: white;
+ font-family: Poppins,sans-serif;
+ padding-left: 20px;
+ line-height: 1.9;
+ padding-bottom: 20px;
+}
+
+.div3 h3{
+    font-size: 27px;
+    font-weight: normal;
+}
+
+
+
+
+
+
+
+.div6 {
+    height: 250px;
+    border-radius: 20px;
+    grid-row: span 3 / span 3;
+    grid-column-start: 1;
+    grid-row-start: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 42%;
+     background-image: url(/src/assets/Hotel-images/ukhotel.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.388);
+}
+
+.div6-badge{
+    width: 35%;
+    height: 30px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    border-radius: 20px;
+    margin-top: 10px;
+     margin-left: 10px;
+}
+
+.div6-badge h2{
+    font-size: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 700;
+}
+
+.div6 span{
+ width: 50%;
+ color: white;
+ font-family: Poppins,sans-serif;
+ padding-left: 20px;
+ line-height: 1.9;
+ padding-bottom: 20px;
+}
+
+.div6 h3{
+    font-size: 27px;
+    font-weight: normal;
+}
+
+
+
+
+
+
+
+
+
+
+.div7 {
+    height: 250px;
+    border-radius: 20px;
+    grid-row: span 3 / span 3;
+    grid-column-start: 3;
+    grid-row-start: 1;
+     display: flex;
+    align-items: start;
+    justify-content: end;
+    flex-direction: column;
+       background-image: url(/src/assets/Hotel-images/victoria.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.388);
+}
+.div7 span{
+ width: 50%;
+ color: white;
+ font-family: Poppins,sans-serif;
+ padding-left: 20px;
+ line-height: 1.9;
+ padding-bottom: 20px;
+}
+
+.div7 h3{
+    font-size: 27px;
+    font-weight: normal;
+}
+
+
+
+
+
+
+
+
+
+.div8 {
+    height: 250px;
+    border-radius: 20px;
+    grid-row: span 3 / span 3;
+    grid-column-start: 3;
+    grid-row-start: 4;
+     display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 42%;
+       background-image: url(/src/assets/Hotel-images/JSON-Images/tahiti.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.388);
+}
+
+
+.div8 span{
+ width: 50%;
+ color: white;
+ font-family: Poppins,sans-serif;
+ padding-left: 20px;
+ line-height: 1.9;
+ padding-bottom: 20px;
+}
+
+.div8 h3{
+    font-size: 27px;
+    font-weight: normal;
+}
+
+.div8-badge{
+    width: 35%;
+    height: 30px;
+    background-color: #ffc107;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    border-radius: 20px;
+    margin-top: 10px;
+     margin-left: 10px;
+}
+
+.div8-badge h2{
+    font-size: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
+
+.div9 {
+    height: 525px;
+    border-radius: 20px;
+    grid-row: span 6 / span 6;
+    grid-column-start: 2;
+    grid-row-start: 1;
+     display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 72%;
+         background-image: url(/src/assets/Hotel-images/resort3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.388);
+}
+
+.div9-badge{
+    width: 35%;
+    height: 30px;
+    background-color: #ff4081;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 20px;
+    margin-top: 10px;
+     margin-left: 10px;
+}
+.div9-badge h2{
+    font-size: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 700;
+}
+
+.div9 span{
+ width: 100%;
+ color: white;
+ font-family: Poppins,sans-serif;
+ text-align: center;
+ line-height: 1.9;
+ padding-bottom: 20px;
+}
+
+.div9 h3{
+    font-size: 27px;
+    font-weight: normal;
+}
