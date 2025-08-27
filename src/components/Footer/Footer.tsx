@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useRef, useState } from "react";
 import {  Mail, MapPin, Send, MessageCircle } from 'lucide-react';
 import { FaPhoneAlt } from "react-icons/fa";
