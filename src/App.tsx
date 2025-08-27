@@ -1,27 +1,35 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
 
-import { Route, Routes } from "react-router-dom"
-import Login from "./pages/login/Login"
-import Signup from "./pages/signup/Signup"
-// import Gallery from "./pages/Gallery/Gallery"
-// import UserDashboard from "./User Dashboard/UserDashboard"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./Pages/Homepage/Homepage";
+import Navbar from "./components/Nav/Navbar";
+import Footer from "./components/Footer/Footer";
+// import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
   return (
-    <>
-      {/* <UserDashboard /> */}
+    <Router>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        {/* <Route path="/about" element={<AboutPage />} /> */}
+        {/* catch-all route */}
+        {/* <Route path="*" element={<NotFoundPage />} /> */}
+              {/* <UserDashboard /> */}
       {/* <Gallery/> */}
       {/* <Signup/> */}
       {/* <Login/> */}
-        <Routes>
           <Route path="/login" element={<Login />} />
           <Route path='/signup' element={<Signup />} />
-        </Routes> 
+      </Routes>
+      <Footer/>
+    </Router>
+  );
+
+
     </>
   )
 }
 
-export default App
+export default App;
+
