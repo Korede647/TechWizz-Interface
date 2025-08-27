@@ -1,6 +1,6 @@
 /* ContactUs.css */
 .contact-container {
-  min-height: 100vh;
+  height: max-content;
   padding: 2rem;
   background: linear-gradient(135deg, #f9f6f3 0%, #e8dfd5 100%);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -71,7 +71,7 @@
 }
 
 .contact-content {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -79,6 +79,7 @@
 }
 
 .contact-info {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
@@ -95,7 +96,10 @@
 }
 
 .info-card {
+  width: 100%;
   padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .info-card h2 {
@@ -125,6 +129,7 @@
   padding: 1.2rem;
   border-radius: 12px;
   transition: all 0.3s ease;
+
 }
 
 .info-item:hover {
@@ -203,6 +208,8 @@
 
 .map-container {
   padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .map-container h2 {
@@ -284,7 +291,10 @@
 }
 
 .contact-form-container {
+  width: 100%;
   padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-header {

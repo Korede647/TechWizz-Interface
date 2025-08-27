@@ -49,6 +49,8 @@ const ContactUs: React.FC = () => {
       </div>
       
       <div className="contact-content">
+
+
         <div className="contact-info">
           <div className="info-card glass-card animate-fade-in">
             <h2>Contact Information</h2>
@@ -118,8 +120,9 @@ const ContactUs: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
         
+        </div>
+
         <div className="contact-form-container glass-card animate-fade-in">
           <div className="form-header">
             <h2>Send Us a Message</h2>
@@ -197,6 +200,7 @@ const ContactUs: React.FC = () => {
             </div>
           </form>
         </div>
+        
       </div>
     </div>
   );
