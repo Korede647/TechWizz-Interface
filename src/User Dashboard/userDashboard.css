@@ -26,11 +26,11 @@
   font-family: "Poppins", "Segoe UI", Roboto, sans-serif;
 }
 
-body {
+/* body {
   background: var(--bg);
   color: var(--gray-dark);
   font-size: 14px;
-}
+} */
 
 /* -------------------------------
    Dashboard Layout
@@ -78,15 +78,15 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.sidebar-toggle .icon {
+.sidebar-toggle .icon12 {
   transition: transform 0.3s ease-in-out;
 }
 
-.sidebar-toggle .icon.rotated {
+.sidebar-toggle .icon12.rotated {
   transform: rotate(90deg);
 }
 
-.logo {
+.logo44 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,12 +98,12 @@ body {
   font-size: 1.2rem;
 }
 
-.subtitle p {
+.subtitle12 p {
   font-size: 0.85rem;
   color: var(--secondary);
 }
 
-.title {
+.title12 {
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -213,7 +213,7 @@ body {
 /* -------------------------------
    Main Content
 -------------------------------- */
-.main {
+.main12 {
   position: relative;
   margin-left: 260px;             
   padding: 1.5rem 2rem;
@@ -231,20 +231,20 @@ body {
 /* -------------------------------
    Search, Profile & Actions
 -------------------------------- */
-.search-container {
+.search-container12 {
   position: relative;
   flex: 1;
   max-width: 400px;
 }
 
-.search-input {
+.search-input12 {
   width: 100%;
   padding: 0.6rem 2.2rem 0.6rem 0.9rem;
   border-radius: 8px;
   border: 1px solid var(--gray-light);
 }
 
-.search-icon {
+.search-icon12 {
   position: absolute;
   right: 0.7rem;
   top: 50%;
@@ -265,7 +265,7 @@ body {
   cursor: pointer;
 }
 
-.notif-btn .dot {
+.notif-btn .dot12 {
   width: 8px;
   height: 8px;
   background: var(--danger);
@@ -378,14 +378,14 @@ body {
 /* -------------------------------
    Bookings Table
 -------------------------------- */
-.bookings-card {
+.bookings-card12 {
   background: var(--white);
   border-radius: 12px;
   padding: 1rem;
   box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
 
-.bookings-card h4 {
+.bookings-card12 h4 {
   margin-bottom: 1rem;
 }
 
@@ -410,7 +410,7 @@ body {
   background: var(--bg);
 }
 
-.badge {
+.badge23 {
   padding: 0.3rem 0.6rem;
   border-radius: 6px;
   font-size: 0.75rem;

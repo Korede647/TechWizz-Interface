@@ -4,7 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
 /* Main Section */
@@ -119,7 +118,7 @@
 }
 
 /* Button */
-button[type="submit"] {
+/* button[type="submit"] {
   width: 100%;
   padding: 13px;
   border-radius: 10px;
@@ -135,7 +134,7 @@ button[type="submit"] {
 button[type="submit"]:hover {
   transform: translateY(-2px);
   background: linear-gradient(135deg, #ff5e62, #ff9966);
-}
+} */
 
 /* Footer */
 .login-footer {

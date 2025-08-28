@@ -228,46 +228,46 @@ const bookings: Booking[] = [
 
 const statusBadge = (status: string) => {
   if (status === "UPCOMING") {
-    return <span className="badge badge-upcoming">Upcoming</span>;
+    return <span className="badge23 badge-upcoming">Upcoming</span>;
   }
   if (status === "COMPLETED") {
-    return <span className="badge badge-completed">Completed</span>;
+    return <span className="badge23 badge-completed">Completed</span>;
   }
   if (status === "PENDING") {
-    return <span className="badge badge-pending">Pending</span>;
+    return <span className="badge23 badge-pending">Pending</span>;
   }
 
-  return <span className="badge badge-cancelled">Cancelled</span>;
+  return <span className="badge23 badge-cancelled">Cancelled</span>;
 };
 
 const sidebarItems = [
   { label: "Overview", icon: <Home className="icon" />, path: "/overview" },
   {
     label: "Bookings",
-    icon: <DollarSign className="icon" />,
+    icon: <DollarSign className="icon12" />,
     path: "/bookings",
   },
   {
     label: "Destinations",
-    icon: <TreePalm className="icon" />,
+    icon: <TreePalm className="icon12" />,
     path: "/destinations",
   },
-  { label: "Loyalty", icon: <Star className="icon" />, path: "/loyalty" },
+  { label: "Loyalty", icon: <Star className="icon12" />, path: "/loyalty" },
 ];
 
 const sidebarItemsClosed = [
-  { icon: <Home className="icon" />, path: "/overview", label: "Overview" },
+  { icon: <Home className="icon12" />, path: "/overview", label: "Overview" },
   {
-    icon: <DollarSign className="icon" />,
+    icon: <DollarSign className="icon12" />,
     path: "/bookings",
     label: "Bookings",
   },
   {
-    icon: <TreePalm className="icon" />,
+    icon: <TreePalm className="icon12" />,
     path: "/destinations",
     label: "Destinations",
   },
-  { icon: <Star className="icon" />, path: "/loyalty", label: "Loyalty" },
+  { icon: <Star className="icon12" />, path: "/loyalty", label: "Loyalty" },
 ];
 
 const UserDashboard: React.FC = () => {
@@ -306,9 +306,9 @@ const UserDashboard: React.FC = () => {
               onClick={() => setSidebarOpen((open) => !open)}
             >
               {sidebarOpen ? (
-                <ChevronLeft className="icon" />
+                <ChevronLeft className="icon12" />
               ) : (
-                <ChevronRight className="icon" />
+                <ChevronRight className="icon12" />
               )}
             </button>
 
@@ -329,12 +329,12 @@ const UserDashboard: React.FC = () => {
 
             {sidebarOpen && (
               <>
-                <div className="logo">
-                  <PlaneTakeoff className="icon" />
+                <div className="logo44">
+                  <PlaneTakeoff className="icon12" />
                 </div>
-                <div className="subtitle">
+                <div className="subtitle12">
                   <p>User Dashboard</p>
-                  <h1 className="title">Travel Start</h1>
+                  <h1 className="title12">Travel Start</h1>
                 </div>
                 <nav className="sidebar-nav">
                   {sidebarItems.map((item) => (
@@ -349,14 +349,14 @@ const UserDashboard: React.FC = () => {
                   ))}
                 </nav>
                 <div className="sidebar_footer">
-                  <PlaneTakeoff className="icon" />
+                  <PlaneTakeoff className="icon12" />
                   <span>Travel Start</span>
                   <p>Bringing the world closer to you</p>
                   <button className="btn primary">
-                    <Calendar className="icon" /> New Booking
+                    <Calendar className="icon12" /> New Booking
                   </button>
                   <button className="btn secondary">
-                    <LogOut className="icon" /> Logout
+                    <LogOut className="icon12" /> Logout
                   </button>
                 </div>
               </>
@@ -365,21 +365,21 @@ const UserDashboard: React.FC = () => {
         </aside>
 
         {/* Main */}
-        <main className="main">
+        <main className="main12">
           {/* Topbar */}
           <div className="topbar">
-            <div className="search-container">
+            <div className="search-container12">
               <input
                 type="text"
                 placeholder="Search bookings, destinations..."
-                className="search-input"
+                className="search-input12"
               />
-              <Search className="search-icon" />
+              <Search className="search-icon12" />
             </div>
             <div className="topbar-actions">
               <button className="notif-btn">
-                <Bell className="icon" />
-                <span className="dot"></span>
+                <Bell className="icon12" />
+                <span className="dot12"></span>
               </button>
               <div className="profile">
                 <img
@@ -389,7 +389,7 @@ const UserDashboard: React.FC = () => {
                 />
                 <span className="username">John Doe</span>
               </div>
-              <ChevronDown className="icon" />
+              <ChevronDown className="icon12" />
             </div>
           </div>
 
@@ -409,9 +409,9 @@ const UserDashboard: React.FC = () => {
                   {typeof item.diff === "number" && (
                     <span className={item.diff >= 0 ? "positive" : "negative"}>
                       {item.diff >= 0 ? (
-                        <ArrowUpRight className="icon" />
+                        <ArrowUpRight className="icon12" />
                       ) : (
-                        <ArrowDownRight className="icon" />
+                        <ArrowDownRight className="icon12" />
                       )}{" "}
                       {Math.abs(item.diff)}%
                     </span>
@@ -476,7 +476,7 @@ const UserDashboard: React.FC = () => {
           </div>
 
           {/* Recent Bookings */}
-          <div className="bookings-card">
+          <div className="bookings-card12">
             <h4>Recent Bookings</h4>
             <table className="bookings-table">
               <thead>

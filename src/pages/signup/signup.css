@@ -37,7 +37,7 @@
   animation: fadeIn 0.6s ease-in-out;
 }
 
-h2 {
+.container h2 {
   margin-bottom: 1.5rem;
   text-align: center;
   font-weight: 600;
@@ -50,17 +50,17 @@ form {
   flex-direction: column;
 }
 
-div {
+/* div {
   margin-bottom: 1rem;
-}
+} */
 
-label {
+/* label {
   margin-bottom: 0.5rem;
   font-weight: 500;
   color: #f0f0f0;
-}
+} */
 
-input[type='text'],
+/* input[type='text'],
 input[type='email'],
 input[type='password'],
 input[type='date'],
@@ -75,7 +75,7 @@ select {
   font-size: 14px;
   outline: none;
   transition: 0.3s ease;
-}
+} */
 
 input::placeholder {
   color: rgba(255, 255, 255, 0.7);
@@ -111,18 +111,18 @@ select:focus {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.login {
+/* .login {
   margin-top: 1rem;
   text-align: center;
   font-size: 14px;
   color: #fff;
-}
+} */
 
-.login a {
+/* .login a {
   color: #00d4ff;
   text-decoration: none;
   font-weight: 500;
-}
+} */
 
 .login a:hover {
   text-decoration: underline;
