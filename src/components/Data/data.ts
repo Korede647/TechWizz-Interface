@@ -4,7 +4,7 @@
 
 import slider1 from "../../assets/Images/slider1.jpg";
 import slider2 from "../../assets/Images/slider2.jpg";
-import slider3 from "../../assets/Images/slider3.jpg";
+import slider3 from "../../assets/Images/IMG_3558.jpeg";
 import slider4 from "../../assets/Images/slider4.jpg";
 import slider5 from "../../assets/Images/slider5.jpg";
 // import slider7 from "../../assets/Images/slider7.jpg";

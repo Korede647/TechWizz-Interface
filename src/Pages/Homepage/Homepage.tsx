@@ -14,6 +14,7 @@ import TourPackages from "../../components/TourPackages/TourPackages";
 import CitySlideshow from "../../components/CitySlideshow/CitySlideshow";
 import ParallaxTourSection from "../../components/ParallaxTourSection/ParallaxTourSection";
 
+
 const storyDuration = 4000;
 const contentUpdateDelay = 0.4;
 
