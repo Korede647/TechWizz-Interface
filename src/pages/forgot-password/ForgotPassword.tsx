@@ -17,7 +17,7 @@ const ForgotPassword: React.FC = () => {
       return;
     }
 
-    // 🔑 Simulated reset flow
+    // Simulated reset flow
     if (email === "test@example.com") {
       setMessage("Password reset link has been sent to your email!");
       setError(null);
@@ -35,16 +35,16 @@ const ForgotPassword: React.FC = () => {
   return (
     <div className="forgot-password-section">
       <div className="forgot-password-container">
-        <h2>Forgot Password</h2>
-        <p>Please enter your email address to reset your password.</p>
+        <h2 className="forgot-password-header">Forgot Password</h2>
+        <p className="forgot-password-subheader">Please enter your email address to reset your password.</p>
 
-        <form onSubmit={handleSubmit} autoComplete="off">
+        <form onSubmit={handleSubmit} autoComplete="off" className="forgot-password-form">
           {error && <p className="error-message">{error}</p>}
           {message && <p className="success-message">{message}</p>}
 
           <div className="form-group">
             <label htmlFor="email">Email:</label>
-            <input
+            <input className="email"
               type="email"
               id="email"
               name="email"

@@ -4,9 +4,9 @@
 // import './App.css'
 
 import { Route, Routes } from "react-router-dom"
-import Login from "./Pages/login/Login"
-import Signup from "./Pages/signup/Signup"
-import ForgotPassword from "./Pages/forgot-password/ForgotPassword"
+import Login from "./pages/login/Login"
+import Signup from "./pages/signup/Signup"
+import ForgotPassword from "./pages/forgot-password/ForgotPassword"
 // import Gallery from "./pages/Gallery/Gallery"
 // import UserDashboard from "./User Dashboard/UserDashboard"
 

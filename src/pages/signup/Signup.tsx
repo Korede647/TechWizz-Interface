@@ -40,11 +40,11 @@ const Signup: React.FC = () => {
   return (
     <div className="signup-section">
       <div className="signup-container">
-        <h2>Signup</h2>
-        <form onSubmit={handleSubmit}>
+        <h2 className='signup-header'>Signup</h2>
+        <form onSubmit={handleSubmit} className='signup-form'>
           {step === 1 && (
             <>
-              <div>
+              <div className='signup-email'>
                 <label>Email:</label>
                 <input
                   type="email"
@@ -56,7 +56,7 @@ const Signup: React.FC = () => {
                   placeholder="Enter your email address"
                 />
               </div>
-              <div>
+              <div className='signup-password'>
                 <label>Password:</label>
                 <input
                   type="password"
@@ -68,9 +68,9 @@ const Signup: React.FC = () => {
                   placeholder="Enter your password"
                 />
               </div>
-              <div>
+              <div className='signup-confirm-password'>
                 <label>Confirm Password:</label>
-                <input
+                <input className='confirm-password'
                   type="password"
                   name="confirmPassword"
                   value={form.confirmPassword}
@@ -85,9 +85,9 @@ const Signup: React.FC = () => {
 
           {step === 2 && (
             <>
-              <div>
+              <div className='signup-first-name'>
                 <label>First Name:</label>
-                <input
+                <input className='first-name'
                   type="text"
                   name="firstName"
                   value={form.firstName}
@@ -97,9 +97,9 @@ const Signup: React.FC = () => {
                   placeholder="Enter your first name"
                 />
               </div>
-              <div>
+              <div className='signup-last-name'>
                 <label>Last Name:</label>
-                <input
+                <input className='last-name'
                   type="text"
                   name="lastName"
                   value={form.lastName}
@@ -109,9 +109,9 @@ const Signup: React.FC = () => {
                   placeholder="Enter your last name"
                 />
               </div>
-              <div>
+              <div className='signup-dob'>
                 <label>Date of Birth:</label>
-                <input
+                <input className='dob'
                   type="date"
                   name="dob"
                   value={form.dob}
@@ -121,7 +121,7 @@ const Signup: React.FC = () => {
                   placeholder="Select your date of birth"
                 />
               </div>
-              <div>
+              <div className='signup-gender'>
                 <label>Gender:</label>
                 <select name="gender" value={form.gender} onChange={handleChange} required title="Gender">
                   <option value="">Select</option>
@@ -135,9 +135,9 @@ const Signup: React.FC = () => {
 
           {step === 3 && (
             <>
-              <div>
+              <div className='signup-phone'>
                 <label>Phone:</label>
-                <input
+                <input className='phone'
                   type="tel"
                   name="phone"
                   value={form.phone}
@@ -146,9 +146,9 @@ const Signup: React.FC = () => {
                   title="Phone Number"
                 />
               </div>
-              <div>
+              <div className='signup-address'>
                 <label>Address:</label>
-                <input
+                <input className='address'
                   type="text"
                   name="address"
                   value={form.address}

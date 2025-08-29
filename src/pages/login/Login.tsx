@@ -33,13 +33,13 @@ const Login: React.FC = () => {
   return (
     <div className="login-section">
       <div className="login-container">
-        <h2>Login</h2>
-        <form onSubmit={handleSubmit} autoComplete="off">
+        <h2 className="login-header">Login</h2>
+        <form onSubmit={handleSubmit} autoComplete="off" className="login-form">
           {error && <p className="error-message">{error}</p>}
 
           <div className="form-group">
             <label htmlFor="email">Email:</label>
-            <input
+            <input className="email"
               type="email"
               id="email"
               name="email"
@@ -53,7 +53,7 @@ const Login: React.FC = () => {
 
           <div className="form-group">
             <label htmlFor="password">Password:</label>
-            <input
+            <input className="password"
               type="password"
               id="password"
               name="password"
@@ -66,7 +66,7 @@ const Login: React.FC = () => {
 
           <div className="form-checks">
             <label className="remember-me">
-              <input
+              <input className="remember"
                 type="checkbox"
                 name="rememberMe"
                 checked={form.rememberMe}
@@ -80,12 +80,12 @@ const Login: React.FC = () => {
             </div>
           </div>
 
-          <button type="submit">Login</button>
+          <button type="submit" className="login-button">Login</button>
         </form>
 
         <div className="login-footer">
-          <p>
-            Don’t have an account? <Link to="/signup">Sign up here!</Link>
+          <p className="footer-text">
+            Don't have an account? <Link to="/signup">Sign up here!</Link>
           </p>
         </div>
       </div>

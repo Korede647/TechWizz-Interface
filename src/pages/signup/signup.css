@@ -1,3 +1,4 @@
+/* 🌟 General reset + font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
@@ -7,11 +8,9 @@
   font-family: "Poppins", sans-serif;
 }
 
-  /* background: linear-gradient(135deg, #89f7fe, #66a6ff); */
-
-
-.signup-section{
-  height: 100vh;
+/* Section background */
+.signup-section {
+  height: 105vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -20,13 +19,12 @@
   padding: 2rem;
   position: fixed; 
   margin-top: -18px;
-  /* margin-bottom: -10px; */
 }
 
 /* Glassmorphism container */
 .signup-container {
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
   padding: 2rem;
   background: rgba(255, 255, 255, 0.15);
   border-radius: 16px;
@@ -37,7 +35,7 @@
   animation: fadeIn 0.6s ease-in-out;
 }
 
-h2 {
+.signup-header {
   margin-bottom: 1.5rem;
   text-align: center;
   font-weight: 600;
@@ -45,27 +43,52 @@ h2 {
   letter-spacing: 1px;
 }
 
-form {
+/* Form layout */
+.signup-form {
   display: flex;
   flex-direction: column;
 }
 
-div {
+/* Input group wrapper */
+.signup-email,
+.signup-password,
+.signup-confirm-password,
+.signup-first-name,
+.signup-last-name,
+.signup-dob,
+.signup-gender,
+.signup-phone,
+.signup-address {
   margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
-label {
+/* Labels */
+.signup-email label,
+.signup-password label,
+.signup-confirm-password label,
+.signup-first-name label,
+.signup-last-name label,
+.signup-dob label,
+.signup-gender label,
+.signup-phone label,
+.signup-address label {
   margin-bottom: 0.5rem;
   font-weight: 500;
   color: #f0f0f0;
 }
 
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='date'],
-input[type='tel'],
-select {
+/* Inputs + select */
+.signup-email input,
+.signup-password input,
+.signup-confirm-password input,
+.signup-first-name input,
+.signup-last-name input,
+.signup-dob input,
+.signup-phone input,
+.signup-address input,
+.signup-gender select {
   width: 100%;
   padding: 0.8rem;
   border: none;
@@ -77,16 +100,58 @@ select {
   transition: 0.3s ease;
 }
 
-input::placeholder {
+.signup-email input::placeholder,
+.signup-password input::placeholder,
+.signup-confirm-password input::placeholder,
+.signup-first-name input::placeholder,
+.signup-last-name input::placeholder,
+.signup-dob input::placeholder,
+.signup-phone input::placeholder,
+.signup-address input::placeholder {
   color: rgba(255, 255, 255, 0.7);
 }
 
-input:focus,
-select:focus {
+.signup-email input:focus,
+.signup-password input:focus,
+.signup-confirm-password input:focus,
+.signup-first-name input:focus,
+.signup-last-name input:focus,
+.signup-dob input:focus,
+.signup-phone input:focus,
+.signup-address input:focus,
+.signup-gender select:focus {
   background: rgba(255, 255, 255, 0.3);
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
 }
 
+/* Dropdown option colors */
+.signup-gender option {
+  color: #000;
+}
+
+/* Terms + Privacy */
+.terms,
+.privacy-policy {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.terms label,
+.privacy-policy label {
+  color: #fff;
+  font-size: 13px;
+}
+
+.terms input,
+.privacy-policy input {
+  cursor: pointer;
+}
+
+/* Form navigation buttons */
 .form-navigation {
   display: flex;
   justify-content: space-between;
@@ -111,6 +176,11 @@ select:focus {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+.submit {
+  margin-left: 10px;
+}
+
+/* Login link */
 .login {
   margin-top: 1rem;
   text-align: center;
@@ -127,35 +197,6 @@ select:focus {
 .login a:hover {
   text-decoration: underline;
 }
-
-.submit {
-    margin-left: 10px;
-}
-
-option {
-  color: #000;
-  border: 1px solid #ccc;
-}
-
-.terms,
-.privacy-policy {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  flex-direction: row-reverse;
-  justify-content: left;
-}
-
-.terms input,
-.privacy-policy input {
-  gap: 10px;
-  justify-content: space-between;
-  margin-left: 5px;
-  align-items: center;
-  margin-bottom: 5px;
-}
-
-
 
 /* Animation */
 @keyframes fadeIn {
