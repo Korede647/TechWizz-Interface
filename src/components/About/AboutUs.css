@@ -196,24 +196,49 @@
 }.values-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+/* Values Section Container */
+.values-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section Title */
+.values-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #8B4513;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+/* Grid Layout */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  justify-items: center;
 }
 
 /* Card */
 .value-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* space out content */
+  justify-content: space-between;
   align-items: center;
   padding: 2rem 1.5rem;
   text-align: center;
   transition: all 0.3s ease;
-  min-height: 340px; /* consistent height */
+  min-height: 340px;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 360px;
 }
 
 /* Hover effect */
@@ -258,9 +283,9 @@
   color: #654321;
   font-size: 1rem;
   line-height: 1.6;
-  flex-grow: 1; /* stretches to keep spacing consistent */
+  flex-grow: 1;
   display: flex;
-  align-items: center; /* centers text vertically */
+  align-items: center;
   text-align: center;
   margin: 0.5rem 0 1.5rem;
 }
@@ -270,9 +295,12 @@
   background: transparent;
   color: #8B4513;
   border: 1.5px solid #8B4513;
-  padding: 0.6rem 1.4rem;
+  /* padding: 0.6rem 1.4rem; */
+  width: 60%;
+  height: 30px;
   border-radius: 50px;
-  font-weight: 500;
+  font-size: small;
+  font-weight: 100;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -280,6 +308,37 @@
 .value-learn-more:hover {
   background: #8B4513;
   color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .values-section {
+    padding: 2rem 1rem;
+  }
+
+  .values-section h2 {
+    font-size: 2rem;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .value-card {
+    padding: 1.5rem 1rem;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .value-card {
+    max-width: 100%;
+  }
 }
 
 .team-preview {

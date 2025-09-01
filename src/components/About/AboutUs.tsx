@@ -56,7 +56,8 @@ const AboutUs: React.FC = () => {
           </div>
         </div>
 
-      <div className="values-section">
+      
+     <div className="values-section">
   <h2>Our Values</h2>
   <div className="values-grid">
     {[
@@ -104,9 +105,13 @@ const AboutUs: React.FC = () => {
         onMouseLeave={() => setActiveValue(null)}
         style={{ animationDelay: `${index * 0.1}s` }}
       >
-        <div className="value-icon">{value.icon}</div>
-        <h3>{value.title}</h3>
-        <p>{value.desc}</p>
+        <div className="value-content">
+          <div className="value-icon">{value.icon}</div>
+          <div className="value-text">
+            <h3>{value.title}</h3>
+            <p>{value.desc}</p>
+          </div>
+        </div>
         <button className="value-learn-more">Learn More</button>
       </div>
     ))}
