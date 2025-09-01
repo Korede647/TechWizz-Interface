@@ -60,12 +60,12 @@ const AboutUs: React.FC = () => {
           <h2>Our Values</h2>
           <div className="values-grid">
             {[
-              { id: 1, title: "Excellence", desc: "We strive for the highest quality in everything we do, paying attention to every detail.", icon: "⭐" },
-              { id: 2, title: "Innovation", desc: "We embrace new ideas and technologies to deliver cutting-edge solutions.", icon: "💡" },
-              { id: 3, title: "Integrity", desc: "We conduct business with honesty, transparency, and respect for all.", icon: "🤝" },
-              { id: 4, title: "Collaboration", desc: "We believe in the power of teamwork and building strong partnerships.", icon: "👥" },
-              { id: 5, title: "Sustainability", desc: "We're committed to environmentally responsible practices.", icon: "🌱" },
-              { id: 6, title: "Growth", desc: "We continuously learn and improve to better serve our clients.", icon: "📈" }
+              { id: 1, title: "Excellence",  icon: "⭐" },
+              { id: 2, title: "Innovation", icon: "💡" },
+              { id: 3, title: "Integrity",  icon: "🤝" },
+              { id: 4, title: "Collaboration",  icon: "👥" },
+              { id: 5, title: "Sustainability",  icon: "🌱" },
+              { id: 6, title: "Growth",  icon: "📈" }
             ].map((value, index) => (
               <div 
                 key={value.id}
@@ -76,7 +76,7 @@ const AboutUs: React.FC = () => {
               >
                 <div className="value-icon">{value.icon}</div>
                 <h3>{value.title}</h3>
-                <p>{value.desc}</p>
+                {/* <p>{value.desc}</p> */}
                 <button className="value-learn-more">Learn More</button>
               </div>
             ))}
