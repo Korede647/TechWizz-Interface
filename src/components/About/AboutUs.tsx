@@ -56,33 +56,62 @@ const AboutUs: React.FC = () => {
           </div>
         </div>
 
-        <div className="values-section">
-          <h2>Our Values</h2>
-          <div className="values-grid">
-            {[
-              { id: 1, title: "Excellence",  icon: "⭐" },
-              { id: 2, title: "Innovation", icon: "💡" },
-              { id: 3, title: "Integrity",  icon: "🤝" },
-              { id: 4, title: "Collaboration",  icon: "👥" },
-              { id: 5, title: "Sustainability",  icon: "🌱" },
-              { id: 6, title: "Growth",  icon: "📈" }
-            ].map((value, index) => (
-              <div 
-                key={value.id}
-                className={`value-card glass-card animate-slide-up ${activeValue === value.id ? 'active' : ''}`}
-                onMouseEnter={() => setActiveValue(value.id)}
-                onMouseLeave={() => setActiveValue(null)}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="value-icon">{value.icon}</div>
-                <h3>{value.title}</h3>
-                {/* <p>{value.desc}</p> */}
-                <button className="value-learn-more">Learn More</button>
-              </div>
-            ))}
-          </div>
-        </div>
-
+      <div className="values-section">
+  <h2>Our Values</h2>
+  <div className="values-grid">
+    {[
+      { 
+        id: 1, 
+        title: "Excellence", 
+        icon: "⭐", 
+        desc: "We strive for outstanding quality in everything we do, delivering exceptional results."
+      },
+      { 
+        id: 2, 
+        title: "Innovation", 
+        icon: "💡", 
+        desc: "We embrace creativity to develop groundbreaking solutions that shape the future."
+      },
+      { 
+        id: 3, 
+        title: "Integrity", 
+        icon: "🤝", 
+        desc: "We uphold honesty and transparency in all our actions and relationships."
+      },
+      { 
+        id: 4, 
+        title: "Collaboration", 
+        icon: "👥", 
+        desc: "We work together, fostering teamwork to achieve shared goals and success."
+      },
+      { 
+        id: 5, 
+        title: "Sustainability", 
+        icon: "🌱", 
+        desc: "We prioritize eco-conscious practices for a healthier planet and future."
+      },
+      { 
+        id: 6, 
+        title: "Growth", 
+        icon: "📈", 
+        desc: "We encourage continuous learning and development for personal and professional growth."
+      }
+    ].map((value, index) => (
+      <div 
+        key={value.id}
+        className={`value-card glass-card animate-slide-up ${activeValue === value.id ? 'active' : ''}`}
+        onMouseEnter={() => setActiveValue(value.id)}
+        onMouseLeave={() => setActiveValue(null)}
+        style={{ animationDelay: `${index * 0.1}s` }}
+      >
+        <div className="value-icon">{value.icon}</div>
+        <h3>{value.title}</h3>
+        <p>{value.desc}</p>
+        <button className="value-learn-more">Learn More</button>
+      </div>
+    ))}
+  </div>
+</div>
         <div className="team-preview glass-card">
           <h2>Leadership Team</h2>
           <div className="team-grid">
