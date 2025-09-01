@@ -103,7 +103,7 @@ const AboutUs: React.FC = () => {
               </div>
             ))}
           </div>
-          <button className="view-all-team">View Full Team</button>
+          {/* <button className="view-all-team">View Full Team</button> */}
         </div>
       </div>
     </div>
