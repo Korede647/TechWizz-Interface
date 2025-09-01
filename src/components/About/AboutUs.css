@@ -193,30 +193,36 @@
   color: #A0522D;
   margin-bottom: 0;
   font-weight: 500;
-}
-.values-grid {
+}.values-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
-  align-items: stretch;
 }
 
 /* Card */
 .value-card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* space out content */
+  align-items: center;
   padding: 2rem 1.5rem;
   text-align: center;
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-  min-height: 360px; /* consistent height */
+  transition: all 0.3s ease;
+  min-height: 340px; /* consistent height */
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Top highlight bar */
+/* Hover effect */
+.value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(139, 69, 19, 0.2);
+}
+
+/* Top bar highlight */
 .value-card::before {
   content: '';
   position: absolute;
@@ -227,39 +233,36 @@
   background: linear-gradient(90deg, #8B4513, #D2B48C);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.4s ease;
+  transition: transform 0.3s ease;
 }
 .value-card:hover::before {
   transform: scaleX(1);
 }
 
-/* Hover effect */
-.value-card.active {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(139, 69, 19, 0.2);
-}
-
-/* Content */
+/* Icon */
 .value-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
+  color: #8B4513;
 }
 
+/* Title */
 .value-card h3 {
   color: #8B4513;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
   font-size: 1.3rem;
 }
 
+/* Description */
 .value-card p {
   color: #654321;
-  line-height: 1.6;
   font-size: 1rem;
-  margin-bottom: 1.5rem;
-  flex-grow: 1; /* keeps text flexible */
+  line-height: 1.6;
+  flex-grow: 1; /* stretches to keep spacing consistent */
   display: flex;
-  align-items: center; 
-  justify-content: center;
+  align-items: center; /* centers text vertically */
+  text-align: center;
+  margin: 0.5rem 0 1.5rem;
 }
 
 /* Button */
@@ -272,15 +275,12 @@
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  align-self: center;
-  margin-top: auto;
 }
 
 .value-learn-more:hover {
   background: #8B4513;
   color: white;
 }
-
 
 .team-preview {
   padding: 3rem;
