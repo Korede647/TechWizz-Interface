@@ -329,7 +329,7 @@ const UserDashboard: React.FC = () => {
 
             {sidebarOpen && (
               <>
-                <div className="logo">
+                <div className="user-dashboard-logo">
                   <PlaneTakeoff className="icon" />
                 </div>
                 <div className="subtitle">

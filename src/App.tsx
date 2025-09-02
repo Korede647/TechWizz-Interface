@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import Login from "./pages/login/Login"
-import Signup from "./pages/signup/Signup"
-import ForgotPassword from "./pages/forgot-password/ForgotPassword"
-import Homepage from "./pages/Homepage/Homepage"
-import Gallery from "./pages/Gallery/Gallery"
+import Login from "./Pages/login/Login"
+import Signup from "./Pages/signup/Signup"
+import ForgotPassword from "./Pages/forgot-password/ForgotPassword"
+import Homepage from "./Pages/Homepage/Homepage"
+import Gallery from "./Pages/Gallery/Gallery"
 import UserDashboard from "./User Dashboard/UserDashboard"
 
 function App() {
