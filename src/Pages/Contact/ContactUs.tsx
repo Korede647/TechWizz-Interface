@@ -130,7 +130,7 @@ const ContactUs: React.FC = () => {
           </div>
           <form onSubmit={handleSubmit} className="contact-form">
             <div className="form-row">
-              <div className="form-group">
+              <div className="form-groupContact">
                 <label htmlFor="name">Your Name *</label>
                 <input
                   type="text"
@@ -141,7 +141,7 @@ const ContactUs: React.FC = () => {
                   required
                 />
               </div>
-              <div className="form-group">
+              <div className="form-groupContact">
                 <label htmlFor="email">Your Email *</label>
                 <input
                   type="email"
@@ -154,7 +154,7 @@ const ContactUs: React.FC = () => {
               </div>
             </div>
             
-            <div className="form-group">
+            <div className="form-groupContact">
               <label htmlFor="subject">Subject *</label>
               <input
                 type="text"
@@ -166,7 +166,7 @@ const ContactUs: React.FC = () => {
               />
             </div>
             
-            <div className="form-group">
+            <div className="form-groupContact">
               <label htmlFor="message">Your Message *</label>
               <textarea
                 id="message"

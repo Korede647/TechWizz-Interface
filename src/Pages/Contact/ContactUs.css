@@ -324,19 +324,19 @@
   margin-bottom: 1.5rem;
 }
 
-.form-group {
+.form-groupContact {
   margin-bottom: 1.5rem;
 }
 
-.form-group label {
+.form-groupContact label {
   display: block;
   margin-bottom: 0.6rem;
   color: #654321;
   font-weight: 500;
 }
 
-.form-group input,
-.form-group textarea {
+.form-groupContact input,
+.form-groupContact textarea {
   width: 100%;
   padding: 1rem 1.2rem;
   border: 1.5px solid rgba(139, 69, 19, 0.3);
@@ -346,10 +346,11 @@
   font-family: inherit;
   transition: all 0.3s ease;
   font-size: 1rem;
+  resize: none;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.form-groupContact input:focus,
+.form-groupContact textarea:focus {
   outline: none;
   border-color: #8B4513;
   box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.2);
