@@ -285,13 +285,18 @@
   border-radius: 12px;
   padding: 0.4rem 0.8rem;
   cursor: pointer;
+  flex-direction: row-reverse;
+  height: auto;
 }
 
 .profile-pic {
+  position: static; /* or remove 'position' entirely */
   width: 32px;
   height: 32px;
   border-radius: 50%;
+  object-fit: cover;
 }
+
 
 .username {
   font-weight: 500;
