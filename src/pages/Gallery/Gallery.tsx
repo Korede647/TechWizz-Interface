@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Gallery.css";
+import LuxuryHotelFooter from "../../components/Footer/Footer";
+import Navbar from "../../components/Nav/Navbar";
 
 <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet"/>
 
@@ -36,6 +38,7 @@ const Gallery: React.FC = () => {
 
   return (
     <>
+    <Navbar/>
       <div className="gallery-container">
         <div className="gallery-overlay">
           <div className="overlay-content">
@@ -72,6 +75,7 @@ const Gallery: React.FC = () => {
           <button onClick={closeLightbox} className="close-btn">✖</button> */}
         </div>
       )}
+      <LuxuryHotelFooter/>
     </>
   );
 };

@@ -143,13 +143,13 @@ const Navbar: React.FC = () => {
             <Link to="/Country">Country</Link>
           </span>
           <span className="glass">
-            <Link to="/Trip-Catalogue">Trip Catalogue</Link>
+            <Link to="/gallery">Trip Catalogue</Link>
           </span>
           <span className="glass">
-            <Link to="/Contact">Contact</Link>
+            <Link to="/contact">Contact</Link>
           </span>
           <span className="glass">
-            <Link to="/About">About</Link>
+            <Link to="/about">About</Link>
           </span>
         </nav>
 
