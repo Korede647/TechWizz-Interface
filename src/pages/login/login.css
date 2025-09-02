@@ -63,22 +63,22 @@
 }
 
 /* Input groups */
-.login-section .form-group {
+.login-section .login-form-group {
   display: flex;
   flex-direction: column;
   margin-bottom: 18px;
   text-align: left;
 }
 
-.login-section .form-group label {
+.login-section .login-form-group label {
   margin-bottom: 6px;
   font-size: 14px;
   font-weight: 500;
   color: #f0f0f0;
 }
 
-.login-section .form-group .email,
-.login-section .form-group .password {
+.login-section .login-form-group .email,
+.login-section .login-form-group .password {
   padding: 12px 14px;
   border-radius: 10px;
   border: none;
@@ -89,18 +89,18 @@
   transition: background 0.3s ease;
 }
 
-.login-section .form-group .email:focus,
-.login-section .form-group .password:focus {
+.login-section .login-form-group .email:focus,
+.login-section .login-form-group .password:focus {
   background: rgba(255, 255, 255, 0.25);
 }
 
-.login-section .form-group .email::placeholder,
-.login-section .form-group .password::placeholder {
+.login-section .login-form-group .email::placeholder,
+.login-section .login-form-group .password::placeholder {
   color: #ccc;
 }
 
 /* Remember me + Forgot */
-.login-section .form-checks {
+.login-section .login-form-checks {
   display: flex;
   justify-content: space-between;
   align-items: center;
