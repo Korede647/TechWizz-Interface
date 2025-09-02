@@ -132,7 +132,7 @@
 }
 
 .sidebar-link:hover {
-  background: #f9fafb;
+  background: --bg;
   color: var(--primary);
 }
 
@@ -221,6 +221,7 @@
   width: calc(100% - 260px);      
   min-height: 100vh;
   overflow-x: hidden;
+  background: var(--bg);
 }
 
 .user-dashboard.sidebar-collapsed .main {
@@ -407,7 +408,7 @@
 }
 
 .bookings-table tbody tr:hover {
-  background: #f9fafb;
+  background: --bg;
 }
 
 .badge {
