@@ -1,5 +1,5 @@
 // GlassCard.jsx
-import "./GlassCard.css";
+import "./Glasscard.css";
 import { IoIosAirplane } from "react-icons/io";
 
 const GlassCard = () => {
