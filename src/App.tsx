@@ -1,33 +1,30 @@
 
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Nav/Navbar";
-import Footer from "./components/Footer/Footer";
 import Homepage from "./Pages/Homepage/Homepage";
+import AboutUs from "./Pages/About/AboutUs";
+import ContactUs from "./Pages/Contact/ContactUs";
 import UserDashboard from "./User Dashboard/UserDashboard";
 import Gallery from "./Pages/Gallery/Gallery";
 import Login from "./Pages/login/Login";
 import Signup from "./Pages/signup/Signup";
-// import NotFoundPage from "./pages/NotFoundPage";
 
-function App() {
+const App: React.FC = () => {
   return (
     <Router>
-      <Navbar />
-
       <Routes>
+        <Route path="*" element={<Homepage/>} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<ContactUs />} />
         <Route path="/" element={<Homepage />} />
-        <Route path="/Login" element={<Login />} />
-        <Route path='/Signup' element={<Signup />} />
-        <Route path = "/user-Dashboard56" element = {<UserDashboard/>}/>
         < Route path="/gallery" element={<Gallery />} />
-        < Route path="*" element={<Homepage />} />
       </Routes>
-      <Footer/>
     </Router>
   );
+};
 
 
-}
+
 
 export default App;
 

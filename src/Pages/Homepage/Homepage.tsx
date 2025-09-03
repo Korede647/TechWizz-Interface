@@ -13,6 +13,8 @@ import WinterSpecial from "../../components/WinterSpecial/WinterSpecial";
 import TourPackages from "../../components/TourPackages/TourPackages";
 import CitySlideshow from "../../components/CitySlideshow/CitySlideshow";
 import ParallaxTourSection from "../../components/ParallaxTourSection/ParallaxTourSection";
+import LuxuryHotelFooter from "../../components/Footer/Footer";
+import Navbar from "../../components/Nav/Navbar";
 
 
 const storyDuration = 4000;
@@ -236,6 +238,8 @@ const Homepage: React.FC = () => {
   }, []);
 
   return (
+    <>
+    <Navbar/>
     <div>
       <div className="container-stories">
         <div className="cursor" ref={cursorRef}>
@@ -312,6 +316,8 @@ const Homepage: React.FC = () => {
         <TourPackages></TourPackages>
       </div>
     </div>
+    <LuxuryHotelFooter/>
+    </>
   );
 };
 

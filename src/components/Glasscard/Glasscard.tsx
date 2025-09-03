@@ -5,7 +5,7 @@ import { IoIosAirplane } from "react-icons/io";
 const GlassCard = () => {
   return (
     <div className="glass-container">
-      <div className="glass-card">
+      <div className="glass-card50">
         <div>
           <h2 className="glasscardh2"> Adventure & <br /> Outdoors</h2>
           <button className="placecircle"><IoIosAirplane style={{fontSize: "20px"}} /></button>
