@@ -9,7 +9,7 @@ import { FiShare2 } from "react-icons/fi";
 import { IoTodayOutline } from "react-icons/io5";
 
 
-const TourCard = ({ title, price, days, image, location }: { title: string; price: string; days: string; image: string; location: string }) => (
+const TourCard = ({  price, days, image, location }: { title: string; price: string; days: string; image: string; location: string }) => (
   <div className="tour-card" style={{ backgroundImage: `url(${image})` }}>
     <div className="card-header">
       <div className="card-header-description">

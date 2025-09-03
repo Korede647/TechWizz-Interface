@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
   const logoImgRef = useRef<HTMLImageElement>(null); // Renamed from profileImgRef
   const [activeStory, setActiveStory] = useState(0);
   const [direction, setDirection] = useState<"next" | "prev">("next");
-  const storyTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const storyTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
    const [isScrolled, setIsScrolled] = useState(false);
 
   // Animation function for logo name (profile name)

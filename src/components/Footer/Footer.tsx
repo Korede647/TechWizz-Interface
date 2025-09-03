@@ -18,7 +18,7 @@ const LuxuryHotelFooter = () => {
   const logoImgRef = useRef<HTMLImageElement>(null); // Renamed from profileImgRef
   const [activeStory, setActiveStory] = useState(0);
   const [direction, setDirection] = useState<"next" | "prev">("next");
-  const storyTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const storyTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Animation function for logo name (profile name)
   const animateLogoName = (newLogoName: HTMLParagraphElement) => {
