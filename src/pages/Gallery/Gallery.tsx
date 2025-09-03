@@ -3,23 +3,20 @@ import "./Gallery.css";
 import LuxuryHotelFooter from "../../components/Footer/Footer";
 import Navbar from "../../components/Nav/Navbar";
 
-<link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet"/>
-
-
+// ✅ Images inside public folder (e.g. public/1018-1080x1920.jpg)
 const images = [
-  { src: "https://picsum.photos/id/1018/1080/1920", title: "Santorini, Greece" },
-  { src: "https://picsum.photos/id/1015/400/600", title: "Bali, Indonesia" },
-  { src: "https://picsum.photos/id/1016/800/400", title: "Swiss Alps" },
-  { src: "https://picsum.photos/id/1019/600/400", title: "Dubai, UAE" },
-  { src: "https://picsum.photos/id/1020/600/400", title: "Paris, France" },
-  { src: "https://picsum.photos/id/1021/600/400", title: "Kyoto, Japan" },
-  { src: "https://picsum.photos/id/1022/600/400", title: "New York, USA" },
-  { src: "https://picsum.photos/id/1023/600/400", title: "Sydney, Australia" },
-  { src: "https://picsum.photos/id/1024/600/1130", title: "Machu Picchu, Peru" },
-  { src: "https://picsum.photos/id/1025/600/400", title: "Venice, Italy" },
-  { src: "https://picsum.photos/id/1026/800/1440", title: "Iceland" },
-  { src: "https://picsum.photos/id/1028/800/1080", title: "Shibuya, Japan" },
-
+  { src: "1018-1080x1920.jpg", title: "Santorini, Greece" },
+  { src: "1015-400x600.jpg", title: "Bali, Indonesia" },
+  { src: "1016-800x400.jpg", title: "Swiss Alps" },
+  { src: "1019-600x400.jpg", title: "Dubai, UAE" },
+  { src: "1020-600x400.jpg", title: "Paris, France" },
+  { src: "1021-600x400.jpg", title: "Kyoto, Japan" },
+  { src: "1022-600x400.jpg", title: "New York, USA" },
+  { src: "1023-600x400.jpg", title: "Sydney, Australia" },
+  { src: "1024-600x1130.jpg", title: "Machu Picchu, Peru" },
+  { src: "1025-600x400.jpg", title: "Venice, Italy" },
+  { src: "1026-800x1440.jpg", title: "Iceland" },
+  { src: "1028-800x1080.jpg", title: "Shibuya, Japan" },
 ];
 
 const Gallery: React.FC = () => {
@@ -39,43 +36,45 @@ const Gallery: React.FC = () => {
   return (
     <>
     <Navbar/>
+    <div className="gallery-page">
+      {/* Hero Banner */}
       <div className="gallery-container">
         <div className="gallery-overlay">
           <div className="overlay-content">
-            <div className="overlay-text">
-              <h1 className="text-title">Gallery</h1>
-            </div>
+            <h1 className="text-title">Gallery</h1>
           </div>
         </div>
       </div>
 
+      {/* Description */}
       <div className="gallery-description">
         <h2 className="gallery-description-header">Our Exhibits</h2>
         <p>Explore our collection of beautiful images from around the world.</p>
       </div>
 
+      {/* Gallery Grid */}
       <div className="gallery-grid">
         {images.map((image, index) => (
-            <div
-            className="gallery-item"
+          <div
             key={index}
+            className="gallery-item"
             onClick={() => openLightbox(image.src, image.title)}
-            >
-                <img src={image.src} alt={image.title} />
-                <div className="gallery-item-title">{image.title}</div>
-            </div>
+          >
+            <img src={image.src} alt={image.title} />
+          </div>
         ))}
       </div>
 
+      {/* Lightbox Modal */}
       {selectedImg && (
         <div className="lightbox" onClick={closeLightbox}>
-          <img src={selectedImg} alt={selectedTitle ?? undefined} />
-          <p>{selectedTitle}</p>
-          {/* <div className="lightbox-caption">{selectedTitle}</div>
-          <button onClick={closeLightbox} className="close-btn">✖</button> */}
+          <span className="close">&times;</span>
+          <img className="lightbox-content" src={selectedImg} alt={selectedTitle || "Selected"} />
+          {selectedTitle && <div className="caption">{selectedTitle}</div>}
         </div>
       )}
       <LuxuryHotelFooter/>
+      </div>
     </>
   );
 };

@@ -37,7 +37,7 @@ const Login: React.FC = () => {
         <form onSubmit={handleSubmit} autoComplete="off" className="login-form">
           {error && <p className="error-message">{error}</p>}
 
-          <div className="form-group">
+          <div className="login-form-group">
             <label htmlFor="email">Email:</label>
             <input className="email"
               type="email"
@@ -51,7 +51,7 @@ const Login: React.FC = () => {
             />
           </div>
 
-          <div className="form-group">
+          <div className="login-form-group">
             <label htmlFor="password">Password:</label>
             <input className="password"
               type="password"
@@ -64,7 +64,7 @@ const Login: React.FC = () => {
             />
           </div>
 
-          <div className="form-checks">
+          <div className="login-form-checks">
             <label className="remember-me">
               <input className="remember"
                 type="checkbox"

@@ -26,11 +26,11 @@
   font-family: "Poppins", "Segoe UI", Roboto, sans-serif;
 }
 
-body {
-  background: var(--bg);
+/* body {
+  background: #f9fafb;
   color: var(--gray-dark);
   font-size: 14px;
-}
+} */
 
 /* -------------------------------
    Dashboard Layout
@@ -86,7 +86,7 @@ body {
   transform: rotate(90deg);
 }
 
-.logo {
+.user-dashboard-logo {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,7 +132,7 @@ body {
 }
 
 .sidebar-link:hover {
-  background: var(--bg);
+  background: --bg;
   color: var(--primary);
 }
 
@@ -221,6 +221,7 @@ body {
   width: calc(100% - 260px);      
   min-height: 100vh;
   overflow-x: hidden;
+  background: var(--bg);
 }
 
 .user-dashboard.sidebar-collapsed .main {
@@ -284,13 +285,18 @@ body {
   border-radius: 12px;
   padding: 0.4rem 0.8rem;
   cursor: pointer;
+  flex-direction: row-reverse;
+  height: auto;
 }
 
 .profile-pic {
+  position: static; /* or remove 'position' entirely */
   width: 32px;
   height: 32px;
   border-radius: 50%;
+  object-fit: cover;
 }
+
 
 .username {
   font-weight: 500;
@@ -407,7 +413,7 @@ body {
 }
 
 .bookings-table tbody tr:hover {
-  background: var(--bg);
+  background: --bg;
 }
 
 .badge {
