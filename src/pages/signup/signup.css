@@ -181,20 +181,20 @@
 }
 
 /* Login link */
-.login {
+.signup-login {
   margin-top: 1rem;
   text-align: center;
   font-size: 14px;
   color: #fff;
 }
 
-.login a {
+.signup-login a {
   color: #00d4ff;
   text-decoration: none;
   font-weight: 500;
 }
 
-.login a:hover {
+.signup-login a:hover {
   text-decoration: underline;
 }
 

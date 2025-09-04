@@ -188,7 +188,7 @@ const Signup: React.FC = () => {
             {step === 3 && <button type="submit" className='submit'>Submit</button>}
           </div>
         </form>
-        <div className="login">
+        <div className="signup-login">
           <p>Already have an account? <Link to="/login">Login here</Link></p>
         </div>
       </div>
