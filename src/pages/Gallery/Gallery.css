@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-/* Base Styles */
+Base Styles
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +14,7 @@
   min-height: 100vh;
 }
 
-/* Hero Section */
+Hero Section
 .gallery-container {
   position: relative;
   width: 100%;
@@ -41,7 +41,7 @@
   text-align: center;
 }
 
-/* Description */
+Description
 .gallery-description {
   text-align: center;
   margin: 40px 0;
@@ -60,7 +60,7 @@
   margin: 0 auto;
 }
 
-/* Masonry Grid */
+Masonry Grid
 .gallery-grid {
   column-count: 3;
   column-gap: 16px;
@@ -90,7 +90,7 @@
   transform: scale(1.05);
 }
 
-/* Title Overlay */
+Title Overlay
 .gallery-item-title {
   position: absolute;
   bottom: 0;
@@ -110,7 +110,7 @@
   opacity: 1;
 }
 
-/* Lightbox */
+Lightbox
 .lightbox {
   position: fixed;
   inset: 0;
@@ -152,7 +152,7 @@
   color: #ff4444;
 }
 
-/* Scrollbar Styling */
+Scrollbar Styling
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -167,7 +167,7 @@
   background: #777;
 }
 
-/* Responsive Styles */
+Responsive Styles
 @media (max-width: 1024px) {
   .gallery-grid {
     column-count: 2;
@@ -203,4 +203,4 @@
     font-size: 0.9rem;
     padding: 0 10px;
   }
-}
+} */

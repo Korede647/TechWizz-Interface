@@ -1,5 +1,5 @@
-/* 🌟 General reset + font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* 
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -8,7 +8,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Section background */
+Section background
 .signup-section {
   height: 105vh;
   width: 100vw;
@@ -21,7 +21,7 @@
   margin-top: -18px;
 }
 
-/* Glassmorphism container */
+Glassmorphism container
 .signup-container {
   width: 100%;
   max-width: 420px;
@@ -43,13 +43,13 @@
   letter-spacing: 1px;
 }
 
-/* Form layout */
+Form layout
 .signup-form {
   display: flex;
   flex-direction: column;
 }
 
-/* Input group wrapper */
+Input group wrapper
 .signup-email,
 .signup-password,
 .signup-confirm-password,
@@ -64,7 +64,7 @@
   flex-direction: column;
 }
 
-/* Labels */
+Labels
 .signup-email label,
 .signup-password label,
 .signup-confirm-password label,
@@ -79,7 +79,7 @@
   color: #f0f0f0;
 }
 
-/* Inputs + select */
+Inputs + select
 .signup-email input,
 .signup-password input,
 .signup-confirm-password input,
@@ -124,12 +124,12 @@
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
 }
 
-/* Dropdown option colors */
+Dropdown option colors
 .signup-gender option {
   color: #000;
 }
 
-/* Terms + Privacy */
+Terms + Privacy
 .terms,
 .privacy-policy {
   display: flex;
@@ -151,7 +151,7 @@
   cursor: pointer;
 }
 
-/* Form navigation buttons */
+Form navigation buttons
 .form-navigation {
   display: flex;
   justify-content: space-between;
@@ -180,7 +180,7 @@
   margin-left: 10px;
 }
 
-/* Login link */
+Login link
 .signup-login {
   margin-top: 1rem;
   text-align: center;
@@ -198,7 +198,7 @@
   text-decoration: underline;
 }
 
-/* Animation */
+Animation
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -208,4 +208,4 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
+}  */

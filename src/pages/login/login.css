@@ -1,4 +1,4 @@
-/* Fonts */
+/* Fonts
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 * {
@@ -8,7 +8,7 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Section background */
+Section background
 .login-section {
   height: 105vh;
   width: 100vw;
@@ -21,7 +21,7 @@
   margin-top: -18px;
 }
 
-/* Glassmorphism container */
+Glassmorphism container
 .login-section .login-container {
   width: 100%;
   max-width: 420px;
@@ -37,7 +37,7 @@
   animation: fadeIn 0.6s ease-in-out;
 }
 
-/* Header */
+Header
 .login-section .login-header {
   font-size: 28px;
   font-weight: 600;
@@ -46,14 +46,14 @@
   letter-spacing: 0.5px;
 }
 
-/* Form */
+Form
 .login-section .login-form {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-/* Error message */
+Error message
 .login-section .error-message {
   margin-bottom: 15px;
   color: #ff4d4f;
@@ -62,7 +62,7 @@
   text-align: center;
 }
 
-/* Input groups */
+Input groups
 .login-section .login-form-group {
   display: flex;
   flex-direction: column;
@@ -99,7 +99,7 @@
   color: #ccc;
 }
 
-/* Remember me + Forgot */
+Remember me + Forgot
 .login-section .login-form-checks {
   display: flex;
   justify-content: space-between;
@@ -137,7 +137,7 @@
   text-decoration: underline;
 }
 
-/* Login button */
+Login button
 .login-section .login-button {
   width: 100%;
   padding: 13px;
@@ -156,7 +156,7 @@
   background: linear-gradient(135deg, #ff5e62, #ff9966);
 }
 
-/* Footer */
+Footer
 .login-section .login-footer {
   margin-top: 20px;
   font-size: 14px;
@@ -177,7 +177,7 @@
   text-decoration: underline;
 }
 
-/* Animation */
+Animation
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -187,4 +187,4 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
+} */
