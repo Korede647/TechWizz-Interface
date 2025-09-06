@@ -1,86 +1,61 @@
+
 import React, { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
 import gsap from "gsap";
-import { stories } from "../../components/Data/data"; // Import stories from data.ts
-import "./nav.css";
+import { stories } from "../../components/Data/data"; // Ensure data.ts exports typed data
+import "./nav.css"
 
-const storyDuration = 4000; // Same as Stories.tsx
-const contentUpdateDelay = 0.4; // Same as Stories.tsx
+
+// Constants from Stories.tsx
+const storyDuration = 4000;
+const contentUpdateDelay = 0.4;
 
 const Navbar: React.FC = () => {
-  const logoNameRef = useRef<HTMLDivElement>(null); // Renamed from profileNameRef to avoid confusion
-  const logoImgRef = useRef<HTMLImageElement>(null); // Renamed from profileImgRef
+  const logoNameRef = useRef<HTMLDivElement>(null);
+  const logoImgRef = useRef<HTMLImageElement>(null);
   const [activeStory, setActiveStory] = useState(0);
-  const [direction, setDirection] = useState<"next" | "prev">("next");
+  const [isScrolled, setIsScrolled] = useState(false);
   const storyTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Animation function for logo name (profile name)
-  const animateLogoName = (newLogoName: HTMLParagraphElement) => {
-    gsap.to(logoNameRef.current?.querySelectorAll("p") || [], {
-      y: direction === "next" ? -24 : 24,
-      duration: 0.5,
-      delay: contentUpdateDelay,
-    });
-    gsap.to(newLogoName, {
-      y: 0,
-      duration: 0.5,
-      delay: contentUpdateDelay,
-    });
-  };
-
-  // Animation function for logo image (profile image)
-  const animateLogoImage = (newImg: HTMLImageElement) => {
-    gsap.fromTo(
-      newImg,
-      { opacity: 0 },
-      { opacity: 1, duration: 0.5, delay: contentUpdateDelay }
-    );
-  };
-
-  // Cleanup function to prevent DOM bloat
-  const cleanUpElements = () => {
-    if (logoNameRef.current && logoNameRef.current.childElementCount > 2) {
-      logoNameRef.current.removeChild(logoNameRef.current.firstChild!);
+  // Animation function for logo name (fade out/in)
+  const animateLogoName = () => {
+    if (logoNameRef.current) {
+      gsap.fromTo(
+        logoNameRef.current,
+        { opacity: 0, y: 10 },
+        { opacity: 1, y: 0, duration: 0.5, delay: contentUpdateDelay }
+      );
     }
   };
 
-  // Change story function
-  const changeStory = (isAutomatic = true) => {
-    const currentDirection = isAutomatic ? "next" : direction;
-    const newIndex =
-      currentDirection === "next"
-        ? (activeStory + 1) % stories.length
-        : (activeStory - 1 + stories.length) % stories.length;
-
-    setActiveStory(newIndex);
-    if (!isAutomatic) setDirection(currentDirection);
-
-    const story = stories[newIndex];
-
-    // Update logo name (profile name)
-    const newLogoName = document.createElement("p");
-    newLogoName.innerText = story.profileName;
-    newLogoName.style.transform =
-      currentDirection === "next" ? "translateY(24px)" : "translateY(-24px)";
-    logoNameRef.current?.appendChild(newLogoName);
-    animateLogoName(newLogoName);
-
-    // Update logo image (profile image)
+  // Animation function for logo image (fade out/in)
+  const animateLogoImage = () => {
     if (logoImgRef.current) {
-      logoImgRef.current.src = story.profileImg;
-      animateLogoImage(logoImgRef.current);
+      gsap.fromTo(
+        logoImgRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 0.5, delay: contentUpdateDelay }
+      );
     }
-
-    cleanUpElements();
-
-    // Set timeout for next story
-    if (storyTimeoutRef.current) clearTimeout(storyTimeoutRef.current);
-    storyTimeoutRef.current = setTimeout(() => changeStory(true), storyDuration);
   };
 
-  // Effect to start story cycling
+  // Cycle to next story
+  const changeStory = () => {
+    // Fade out current content
+    if (logoNameRef.current && logoImgRef.current) {
+      gsap.to([logoNameRef.current, logoImgRef.current], {
+        opacity: 0,
+        duration: 0.3,
+        onComplete: () => {
+          // Update story after fade-out
+          setActiveStory((prev) => (prev + 1) % stories.length);
+        },
+      });
+    }
+  };
+
+  // Effect to handle story cycling
   useEffect(() => {
     // Preload images to avoid flickering
     stories.forEach((story) => {
@@ -88,49 +63,40 @@ const Navbar: React.FC = () => {
       img.src = story.profileImg;
     });
 
-    // Initial story animation
-    storyTimeoutRef.current = setTimeout(() => changeStory(true), storyDuration);
+    // Animate after story change
+    animateLogoName();
+    animateLogoImage();
+
+    // Set timeout for next story
+    storyTimeoutRef.current = setTimeout(changeStory, storyDuration);
 
     return () => {
       if (storyTimeoutRef.current) clearTimeout(storyTimeoutRef.current);
     };
   }, [activeStory]);
 
-   useEffect(() => {
+  // Scroll effect
+  useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-
-  // Optional: Handle click navigation (uncomment to enable)
-  /*
-  const handleNavClick = (navDirection: "next" | "prev") => {
-    if (storyTimeoutRef.current) clearTimeout(storyTimeoutRef.current);
-    setDirection(navDirection);
-    changeStory(false);
-  };
-  */
-
   return (
     <div className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="logo" aria-label={`Profile: ${stories[activeStory].profileName}`}>
         <div className="logo-image">
           <img
-            src={stories[0].profileImg}
-            alt={stories[0].profileName}
+            src={stories[activeStory].profileImg}
+            alt={stories[activeStory].profileName}
             ref={logoImgRef}
           />
         </div>
-        <div className="profile-name">
-        <p>{stories[0].profileName}</p>
+        <div className="profile-name" ref={logoNameRef}>
+          <p>{stories[activeStory].profileName}</p>
         </div>
       </div>
 
@@ -143,13 +109,13 @@ const Navbar: React.FC = () => {
             <Link to="/Country">Country</Link>
           </span>
           <span className="glass">
-            <Link to="/gallery">Trip Catalogue</Link>
+            <Link to="/Trip-Catalogue">Trip Catalogue</Link>
           </span>
           <span className="glass">
-            <Link to="/contact">Contact</Link>
+            <Link to="/Contact">Contact</Link>
           </span>
           <span className="glass">
-            <Link to="/about">About</Link>
+            <Link to="/About">About</Link>
           </span>
         </nav>
 
