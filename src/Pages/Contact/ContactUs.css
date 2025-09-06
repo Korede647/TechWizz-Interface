@@ -151,13 +151,13 @@
   flex-shrink: 0;
 }
 
-.details h3 {
+.details1 h3 {
   color: #8B4513;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
 }
 
-.details p {
+.details1 p {
   color: #654321;
   line-height: 1.5;
   margin-bottom: 0.3rem;

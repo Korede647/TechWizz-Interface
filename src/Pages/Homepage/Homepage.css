@@ -178,14 +178,13 @@ a {
 
 .title-row {
   position: relative;
-  width: 105%;
+  width: 120%;
   height: 45px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   color: #fff;
   text-decoration: none;
   font-weight: 400;
   font-family: "Poppins", sans-serif;
-
 }
 
 .link {
@@ -237,15 +236,3 @@ a {
 
 
 
-
-@media (max-width: 900px) {
-
-  .story-content {
-    width: 100%;
-    padding: 2em;
-  }
-
-  .cursor {
-    display: none;
-  }
-}

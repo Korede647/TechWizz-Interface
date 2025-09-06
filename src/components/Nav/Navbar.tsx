@@ -1,23 +1,26 @@
-"use client";
 import React, { useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
 import gsap from "gsap";
-import { stories } from "../../components/Data/data"; // Import stories from data.ts
+import { stories } from "../../components/Data/data";
 import "./nav.css";
 
-const storyDuration = 4000; // Same as Stories.tsx
-const contentUpdateDelay = 0.4; // Same as Stories.tsx
+const storyDuration = 4000;
+const contentUpdateDelay = 0.4;
 
 const Navbar: React.FC = () => {
-  const logoNameRef = useRef<HTMLDivElement>(null); // Renamed from profileNameRef to avoid confusion
-  const logoImgRef = useRef<HTMLImageElement>(null); // Renamed from profileImgRef
+  const logoNameRef = useRef<HTMLDivElement>(null);
+  const logoImgRef = useRef<HTMLImageElement>(null);
   const [activeStory, setActiveStory] = useState(0);
   const [direction, setDirection] = useState<"next" | "prev">("next");
   const storyTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-   const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  // Animation function for logo name (profile name)
+  // NEW: hamburger toggle state
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  // === animation functions (unchanged) ===
   const animateLogoName = (newLogoName: HTMLParagraphElement) => {
     gsap.to(logoNameRef.current?.querySelectorAll("p") || [], {
       y: direction === "next" ? -24 : 24,
@@ -31,7 +34,6 @@ const Navbar: React.FC = () => {
     });
   };
 
-  // Animation function for logo image (profile image)
   const animateLogoImage = (newImg: HTMLImageElement) => {
     gsap.fromTo(
       newImg,
@@ -40,14 +42,12 @@ const Navbar: React.FC = () => {
     );
   };
 
-  // Cleanup function to prevent DOM bloat
   const cleanUpElements = () => {
     if (logoNameRef.current && logoNameRef.current.childElementCount > 2) {
       logoNameRef.current.removeChild(logoNameRef.current.firstChild!);
     }
   };
 
-  // Change story function
   const changeStory = (isAutomatic = true) => {
     const currentDirection = isAutomatic ? "next" : direction;
     const newIndex =
@@ -60,7 +60,6 @@ const Navbar: React.FC = () => {
 
     const story = stories[newIndex];
 
-    // Update logo name (profile name)
     const newLogoName = document.createElement("p");
     newLogoName.innerText = story.profileName;
     newLogoName.style.transform =
@@ -68,7 +67,6 @@ const Navbar: React.FC = () => {
     logoNameRef.current?.appendChild(newLogoName);
     animateLogoName(newLogoName);
 
-    // Update logo image (profile image)
     if (logoImgRef.current) {
       logoImgRef.current.src = story.profileImg;
       animateLogoImage(logoImgRef.current);
@@ -76,20 +74,16 @@ const Navbar: React.FC = () => {
 
     cleanUpElements();
 
-    // Set timeout for next story
     if (storyTimeoutRef.current) clearTimeout(storyTimeoutRef.current);
     storyTimeoutRef.current = setTimeout(() => changeStory(true), storyDuration);
   };
 
-  // Effect to start story cycling
   useEffect(() => {
-    // Preload images to avoid flickering
     stories.forEach((story) => {
       const img = new Image();
       img.src = story.profileImg;
     });
 
-    // Initial story animation
     storyTimeoutRef.current = setTimeout(() => changeStory(true), storyDuration);
 
     return () => {
@@ -97,32 +91,21 @@ const Navbar: React.FC = () => {
     };
   }, [activeStory]);
 
-   useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-
-  // Optional: Handle click navigation (uncomment to enable)
-  /*
-  const handleNavClick = (navDirection: "next" | "prev") => {
-    if (storyTimeoutRef.current) clearTimeout(storyTimeoutRef.current);
-    setDirection(navDirection);
-    changeStory(false);
-  };
-  */
-
   return (
     <div className={`navbar ${isScrolled ? "scrolled" : ""}`}>
-      <div className="logo" aria-label={`Profile: ${stories[activeStory].profileName}`}>
+      <div
+        className="logo"
+        aria-label={`Profile: ${stories[activeStory].profileName}`}
+      >
         <div className="logo-image">
           <img
             src={stories[0].profileImg}
@@ -130,37 +113,47 @@ const Navbar: React.FC = () => {
             ref={logoImgRef}
           />
         </div>
-        <div className="profile-name">
-        <p>{stories[0].profileName}</p>
+        <div className="profile-name" ref={logoNameRef}>
+          <p>{stories[0].profileName}</p>
         </div>
       </div>
 
-      <div className="left-nav">
+      {/* Hamburger Button */}
+      <button
+        className={`hamburger-button ${isOpen ? "open" : ""}`}
+        onClick={toggleMenu}
+      >
+        <span className="hamburger-span"></span>
+        <span className="hamburger-span"></span>
+        <span className="hamburger-span"></span>
+      </button>
+
+      <div className={`left-nav ${isOpen ? "open" : ""}`}>
         <nav className="nav-links">
           <span className="glass">
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" onClick={() => setIsOpen(false)}>Home</NavLink>
           </span>
           <span className="glass">
-            <Link to="/Country">Country</Link>
+            <Link to="/Country" onClick={() => setIsOpen(false)}>Country</Link>
           </span>
           <span className="glass">
-            <Link to="/Trip-Catalogue">Trip Catalogue</Link>
+            <Link to="/Trip-Catalogue" onClick={() => setIsOpen(false)}>Trip Catalogue</Link>
           </span>
           <span className="glass">
-            <Link to="/Contact">Contact</Link>
+            <Link to="/Contact" onClick={() => setIsOpen(false)}>Contact</Link>
           </span>
           <span className="glass">
-            <Link to="/About">About</Link>
+            <Link to="/About" onClick={() => setIsOpen(false)}>About</Link>
           </span>
         </nav>
 
         <div className="user-auth">
           <span className="signup">
             <span className="dot"></span>
-            <Link to="/Signup">Signup</Link>
+            <Link to="/Signup" onClick={() => setIsOpen(false)}>Signup</Link>
           </span>
           <button className="login">
-            <Link to="/Login">
+            <Link to="/Login" onClick={() => setIsOpen(false)}>
               Login <FaArrowRightLong style={{ paddingTop: "5px" }} />
             </Link>
           </button>

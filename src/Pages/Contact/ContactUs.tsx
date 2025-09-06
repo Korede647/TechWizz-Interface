@@ -77,7 +77,7 @@ const ContactUs: React.FC = () => {
               <div className="icon">
                 <i className="fas fa-envelope"></i>
               </div>
-              <div className="details">
+              <div className="details1">
                 <h3>Email</h3>
                 <p>info@company.com</p>
                 <span className="contact-option">General Inquiries</span>
