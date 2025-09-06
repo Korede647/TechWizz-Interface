@@ -5,7 +5,7 @@ function WinterSpecial() {
     <div className='winterspecial'>
         <div className="wnter-special-title">
             <h1>Winter Special Trip</h1>
-            <p>Plan, book, and embark on your dream adventure with <br />
+            <p>Plan, book, and embark on your dream adventure with <br className='brake'/>
                 our expert guidance and tailored experiences.</p>
         </div>
 

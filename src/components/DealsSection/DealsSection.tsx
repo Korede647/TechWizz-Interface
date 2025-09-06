@@ -51,7 +51,7 @@ const LastMinuteDeals: React.FC = () => {
     if (scrollRef.current) {
       const touch = e.touches[0];
       const startX = touch.clientX;
-      let scrollLeft = scrollRef.current.scrollLeft;
+      const scrollLeft = scrollRef.current.scrollLeft;
 
       const handleMove = (moveEvent: TouchEvent) => {
         const currentX = moveEvent.touches[0].clientX;

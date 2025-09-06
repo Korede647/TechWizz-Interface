@@ -99,10 +99,23 @@
   align-items: center;
   justify-content: center;
   margin: 0 10px;
-  z-index: 5;
+  z-index: 1;
 }
 
 .arrow:hover {
   background: #f1f1f1;
 }
 
+
+@media screen and (max-width: 1208px) {
+  .arrow {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 1151px) {
+  .travel-card {
+    display: none;
+  }
+}

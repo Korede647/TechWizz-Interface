@@ -136,3 +136,12 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+
+
+@media screen and (max-width: 899px) {
+  .glass-container{
+    border: 1px solid white;
+    display: none;
+  }
+}

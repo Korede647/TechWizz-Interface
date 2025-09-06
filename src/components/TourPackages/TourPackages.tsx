@@ -1,23 +1,35 @@
 import React, { useRef } from 'react';
 import './TourPackages.css';
 import barca from '../../assets/Portrait/resort2.jpg';
-import restor2 from '../../assets/Portrait/luxury-img.jpg'
-import treasurepark from '../../assets/Portrait/beach-park.jpg'
-import threeimg from '../../assets/Portrait/three.jpg'
+import restor2 from '../../assets/Portrait/luxury-img.jpg';
+import treasurepark from '../../assets/Portrait/beach-park.jpg';
+import threeimg from '../../assets/Portrait/three.jpg';
 import { FaRegStar } from "react-icons/fa";
 import { FiShare2 } from "react-icons/fi";
 import { IoTodayOutline } from "react-icons/io5";
 
+interface TourCardProps {
+  title: string;
+  price: string;
+  days: string;
+  image: string;
+  location: string;
+}
 
-const TourCard = ({ title, price, days, image, location }: { title: string; price: string; days: string; image: string; location: string }) => (
+const TourCard: React.FC<TourCardProps> = ({ title, price, days, image, location }) => (
   <div className="tour-card" style={{ backgroundImage: `url(${image})` }}>
     <div className="card-header">
       <div className="card-header-description">
-        <span className="likes"> <div className="icon-box"><FaRegStar /></div> 2,332</span>
-      <span className="price-tag"><FiShare2 /> $50</span></div>
-      <span className="days"> <IoTodayOutline /> {days}</span>
+        <span className="likes">
+          <div className="icon-box"><FaRegStar /></div> 2,332
+        </span>
+        <span className="price-tag"><FiShare2 /> $50</span>
+      </div>
+      <span className="days"><IoTodayOutline /> {days}</span>
     </div>
     <div className="tour-content">
+      {/* ✅ Title now visible */}
+      <h3 className="tour-title">{title}</h3>
       <div className="tour-info">
         <p>Price starts from (per person), with Airfare</p>
         <p className="price-value">{price}</p>
@@ -34,7 +46,7 @@ const TourPackages: React.FC = () => {
     if (scrollRef.current) {
       const touch = e.touches[0];
       const startX = touch.clientX;
-      let scrollLeft = scrollRef.current.scrollLeft;
+      const scrollLeft = scrollRef.current.scrollLeft;
 
       const handleMove = (moveEvent: TouchEvent) => {
         const currentX = moveEvent.touches[0].clientX;
@@ -52,7 +64,7 @@ const TourPackages: React.FC = () => {
     }
   };
 
-  const tours = [
+  const tours: TourCardProps[] = [
     { title: 'Switzerland, Lake Lucerne Visit', price: 'USD $4999', days: '7 day', image: barca, location: 'Switzerland, Lake Lucerne Visit' },
     { title: 'Bali, Indonesia', price: 'USD $3999', days: '7 day', image: restor2, location: 'Bali, Indonesia' },
     { title: 'Canada, Niagara Falls', price: 'USD $4999', days: '7 day', image: treasurepark, location: 'Canada, Niagara Falls' },
@@ -69,7 +81,14 @@ const TourPackages: React.FC = () => {
       </p>
       <div className="tour-grid" ref={scrollRef} onTouchStart={handleSwipe}>
         {tours.map((tour, index) => (
-          <TourCard key={index} title={tour.title} price={tour.price} days={tour.days} image={tour.image} location={tour.location} />
+          <TourCard
+            key={index}
+            title={tour.title}
+            price={tour.price}
+            days={tour.days}
+            image={tour.image}
+            location={tour.location}
+          />
         ))}
       </div>
     </div>

@@ -249,7 +249,7 @@
     flex-direction: column;
     align-items: start;
     gap: 72%;
-         background-image: url(/src/assets/Hotel-images/resort3.jpg);
+    background-image: url(/src/assets/Hotel-images/resort3.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -287,4 +287,311 @@
 .div9 h3{
     font-size: 27px;
     font-weight: normal;
+}
+
+
+
+/* =========================
+   RESPONSIVENESS
+   ========================= */
+
+/* Tablet: max-width 1024px (2 columns) */
+@media (max-width: 1024px) {
+  .parent {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .div3,
+  .div6,
+  .div7,
+  .div8,
+  .div9 {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    height: 250px;
+  }
+
+  .div9 {
+    height: 300px; /* reduce tall card */
+  }
+
+  .wnter-special-title h1 {
+    font-size: 32px;
+  }
+
+  .wnter-special-title p {
+    font-size: 15px;
+  }
+}
+
+
+@media screen and (max-width: 1208px) {
+
+
+    .div8 span{
+        width: 70%;
+        color: white;
+        font-family: Poppins,sans-serif;
+        padding-left: 20px;
+        line-height: 1.5;
+        padding-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 1169px) {
+  .wnter-special-title{
+    width: 100%;
+    height: 150px;
+    color: white;
+    font-family: Poppins, sans-serif;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    text-align: start;
+    gap: 20px;
+    padding-top: 20px;
+  }
+  .wnter-special-title p{
+    line-height: 1.5;
+    font-size: 16px;
+    color: gray;
+}
+}
+
+
+
+/* Mobile: max-width 768px (1 column) */
+@media (max-width: 768px) {
+  .parent {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+  }
+
+  .div3,
+  .div6,
+  .div7,
+  .div8,
+  .div9 {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    height: 220px;
+  }
+
+  .div9 {
+    height: 250px;
+  }
+
+  .wnter-special-title h1 {
+    font-size: 26px;
+  }
+
+  .wnter-special-title p {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  /* badges scale down */
+  .div6-badge,
+  .div8-badge,
+  .div9-badge {
+    width: auto;
+    padding: 0 10px;
+    height: 26px;
+    font-size: 11px;
+  }
+
+  .div6-badge h2,
+  .div8-badge h2,
+  .div9-badge h2 {
+    font-size: 11px;
+  }
+}
+
+/* Extra small devices: max-width 480px */
+@media (max-width: 480px) {
+  .wnter-special-title h1 {
+    font-size: 22px;
+  }
+
+  .wnter-special-title p {
+    font-size: 12px;
+  }
+
+  .div3 h3,
+  .div6 h3,
+  .div7 h3,
+  .div8 h3,
+  .div9 h3 {
+    font-size: 20px;
+  }
+
+  .div3 p,
+  .div6 p,
+  .div7 p,
+  .div8 p,
+  .div9 p {
+    font-size: 12px;
+  }
+}
+
+
+
+@media screen and (max-width: 1072px) {
+    .wnter-special-title{
+    width: 100%;
+    height: 150px;
+    color: white;
+    font-family: Poppins, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding-top: 20px;
+  }
+
+  .wnter-special-title p {
+    width: 60%;
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .brake{
+    display: none;
+  }
+
+   /* badges scale down */
+  .div6-badge,
+  .div8-badge,
+  .div9-badge {
+    width: 45%;
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+    
+    .div9 {
+        gap: 50%;
+    }
+}
+
+
+@media screen and (max-width: 899px) {
+  .div6-badge,
+  .div8-badge,
+  .div9-badge {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 826px) {
+   .div6-badge,
+  .div8-badge,
+  .div9-badge {
+    width: 35%;
+  }
+
+}
+
+
+@media screen and (max-width: 768px) {
+  .div9 span{
+        width: 100%;
+        color: white;
+        font-family: Poppins,sans-serif;
+        text-align: start;
+        line-height: 1.9;
+        padding-bottom: 20px;
+        padding:  10px;
+    }
+     .div9 {
+        gap: 45%;
+    }
+
+    .div6{
+        gap: 35%;
+    }
+
+    .div6-badge,
+  .div8-badge,
+  .div9-badge {
+    width: 20%;
+  }
+
+  .wnter-special-title{
+    width: 100%;
+    height: 150px;
+    color: white;
+    font-family: Poppins, sans-serif;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    text-align: start;
+    gap: 20px;
+    padding-top: 20px;
+  }
+
+    .wnter-special-title h1{
+        padding-left: 15px;
+    }   
+}
+
+
+@media screen and (max-width: 636px) {
+     .div6-badge,
+  .div8-badge,
+  .div9-badge {
+    width: 25%;
+  }
+}
+
+
+@media screen and (max-width: 506px) {
+    .wnter-special-title p {
+    width: 90%;
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+    .div6-badge,
+  .div8-badge,
+  .div9-badge {
+    width: 30%;
+  }
+}
+
+
+@media screen and (max-width: 481px) {
+     .wnter-special-title h1{
+       font-size: 25px;
+    } 
+
+     .wnter-special-title p {
+        font-size: 12px;
+    }
+
+    .winterspecial{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0px;
+    }
+}
+
+
+
+@media screen and (max-width: 421px) {
+      .div6-badge,
+  .div8-badge,
+  .div9-badge {
+    width: 35%;
+  }
 }

@@ -13,6 +13,8 @@ import WinterSpecial from "../../components/WinterSpecial/WinterSpecial";
 import TourPackages from "../../components/TourPackages/TourPackages";
 import CitySlideshow from "../../components/CitySlideshow/CitySlideshow";
 import ParallaxTourSection from "../../components/ParallaxTourSection/ParallaxTourSection";
+import Testimony from "../../components/Testimony/Testimony";
+import PopularDestinations from '../../components/PopularDestinations/PopularDestinations'
 
 
 const storyDuration = 4000;
@@ -309,6 +311,8 @@ const Homepage: React.FC = () => {
         <WinterSpecial></WinterSpecial>
         <PopularLocations />
         <ParallaxTourSection />
+        <Testimony></Testimony>
+        <PopularDestinations></PopularDestinations>
         <TourPackages></TourPackages>
       </div>
     </div>

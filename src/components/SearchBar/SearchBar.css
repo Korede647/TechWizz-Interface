@@ -1,3 +1,8 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 .reservation-form {
   display: flex;
@@ -108,3 +113,107 @@
   color: white;
   border-bottom: 1px solid #fff;
 }
+
+
+
+@media screen and (max-width: 1208px) {
+  .reservation-form {
+    margin-right: 50px;
+  }
+}
+
+
+
+@media screen and (max-width: 1072px) {
+  .reservation-form {
+    display: flex;
+    gap: 1rem;
+    background: #222222;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 99%;
+    height: 120px;
+    margin: auto;
+    z-index: 1;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .icon1{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .reservation-form {
+    flex-wrap: wrap;        /* allow wrapping */
+    height: auto;           /* let it adjust */
+    gap: 0.5rem;            /* tighter spacing */
+    padding: 0.8rem;
+     bottom: 70px;
+     border-radius: 20px;
+  }
+
+  .icon1{
+    display: flex;
+  }
+
+  .form-group {
+    flex: 1 1 45%;          /* two items per row */
+    min-width: 200px;       /* don’t shrink too much */
+    border-right: none;     /* remove divider */
+    border-bottom: none;    /* clean look */
+    justify-content: flex-start;
+  }
+
+  .form-group .icon1 {
+    font-size: 28px;
+    margin-right: 0.5rem;
+  }
+
+  .checkin {
+    font-size: 1rem;
+  }
+
+  .form-group input,
+  .form-group .react-datepicker-wrapper {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .btn-submit {
+    flex: 1 1 100%;         /* button on its own row */
+    width: 100%;
+    height: 55px;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+  .btn-submit {
+  background: #1D4674;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: 20%;
+  height: 60px;
+  border-radius: 20px;
+}
+}
+
+
+
+@media screen and (max-width: 506px) {
+   .reservation-form {
+    width: 90%;
+  }
+}
+
+
+

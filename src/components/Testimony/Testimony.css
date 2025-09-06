@@ -1,0 +1,95 @@
+.testimony-section {
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  padding: 60px 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* hide scrollbar Firefox */
+  -ms-overflow-style: none; /* hide scrollbar IE */
+}
+.testimony-section::-webkit-scrollbar {
+  display: none; /* hide scrollbar Chrome */
+}
+
+.testimony-card {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  text-align: left;
+  max-width: 350px;
+  color: #fff;
+}
+
+.testimony-img,
+.testimony-img1,
+.testimony-img2 {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.testimony-img {
+  background-image: url(/src/assets/Images/profile1.jpg);
+}
+.testimony-img1 {
+  background-image: url(/src/assets/Images/profile2.jpg);
+}
+.testimony-img2 {
+  background-image: url(/src/assets/Images/profile3.jpg);
+}
+
+.testimony-card h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.testimony-card p {
+  font-size: 1rem;
+  color: #bbb;
+  font-style: italic;
+  line-height: 1.5;
+  width: 170px;
+}
+
+/* Responsive */
+@media screen and (max-width: 1073px) {
+  .testimony-section {
+    justify-content: flex-start;
+    gap: 40px;
+  }
+}
+
+@media screen and (max-width: 1073px) {
+  .testimony-card span{
+    margin-top: 20px;
+  }
+  .testimony-section {
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding: 60px 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* hide scrollbar Firefox */
+    -ms-overflow-style: none; /* hide scrollbar IE */
+  }
+  .testimony-card {
+    flex-direction: column;
+    text-align: center;
+    max-width: 250px;
+  }
+
+  .testimony-card p {
+    width: 100%;
+  }
+}
